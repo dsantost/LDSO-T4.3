@@ -1,0 +1,67 @@
+/*****************************/
+/*** overriding stylesheet ***/
+/*****************************/
+
+* {
+
+}
+
+.spacer {
+	margin-top: 100px;
+	margin-bottom: 150px;
+}
+
+.list-group-item {
+	text-align: center;
+}
+
+.list-group h3 {
+	font-size: 35px;
+	background-color: #f83764;
+	width: 100%;
+	color: #ffffff;
+	padding: 10px;
+}
+
+.list-group h5 {
+	color: #1c70f8;
+	font-style: italic;
+	font-size: 30px;
+}
+
+blockquote {
+	border: none;
+}
+
+blockquote p, cite {
+	font-size: 14px;
+}
+
+.nav {
+	margin: 10px 0 20px 0;
+}
+
+.nav.nav-pills li {
+	/*outline: 1px solid #f81b00;*/
+	width: 33%;
+	margin: 0;
+	padding: 0;
+	background-color: #e5e2df;
+}
+
+.nav-pills>li>a {
+	border-radius: 0;
+}
+
+.well h4 {
+	background-color: #ffffff;
+	padding: 10px;
+	border: 1px solid #f83764;
+}
+
+select {
+	background-color: #44f8bd;
+	border: none;
+	padding: 10px;
+	color: #ffffff;
+}
