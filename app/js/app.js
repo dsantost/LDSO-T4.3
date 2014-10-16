@@ -27,18 +27,18 @@ $routeProvider
 // create the controller and inject Angular's $scope
 portal.controller('mainCtrl', function($scope) {
         // create a message to display in our view
-        $scope.heading = 'Welcome to Portal Académico';
-        $scope.message = 'Here you will find the meaning of life.';
+        $scope.heading = 'Bem vindo ao Portal Académico';
+        $scope.message = 'Encontre tudo o que quer saber sobre o Ensino Superior em Portugal!';
 });
 
 portal.controller('faqCtrl', function($scope) {
         $scope.heading = 'FAQ';
-        $scope.message = 'This is where you will find the accumulated knowledge of the world.';
+        $scope.message = 'Em construção';
 });
 
 portal.controller('contactCtrl', function($scope) {
-        $scope.heading = 'Contact us';
-        $scope.message = 'Contact us';
+        $scope.heading = 'Contatos';
+        $scope.message = 'Em construção';
 });
 
 portal.controller('TabController', function(){
@@ -51,4 +51,34 @@ portal.controller('TabController', function(){
     this.isSet = function(tabName){
       return this.tab === tabName;
     }
+});
+
+portal.controller('VertNavCtrl', function($scope){
+  var tabClasses;
+  
+  function initTabs() {
+    tabClasses = ["","","",""];
+  }
+  
+  $scope.getTabClass = function (tabNum) {
+    return tabClasses[tabNum];
+  };
+  
+  $scope.getTabPaneClass = function (tabNum) {
+    return "tab-pane " + tabClasses[tabNum];
+  }
+  
+  $scope.setActiveTab = function (tabNum) {
+    initTabs();
+    tabClasses[tabNum] = "active";
+  };
+  
+  $scope.tab1 = "This is first section";
+  $scope.tab2 = "This is SECOND section";
+  $scope.tab3 = "This is THIRD section";
+  $scope.tab4 = "This is FOUTRH section";
+  
+  //Initialize 
+  initTabs();
+  $scope.setActiveTab(1);
 });
