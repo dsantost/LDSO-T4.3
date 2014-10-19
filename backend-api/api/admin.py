@@ -1,5 +1,5 @@
 from django.contrib import admin
-from api.models import Commentary, City, Category, Company, Course, Degree, Institution, Student
+from api.models import Commentary, City, Category, Company, Subject, Degree, Institution, Student
 
 
 class InstitutionAdmin(admin.ModelAdmin):
@@ -19,5 +19,5 @@ admin.site.register(Category)
 admin.site.register(Student)
 admin.site.register(Commentary)
 admin.site.register(Company)
-admin.site.register(Course, CourseAdmin)
+admin.site.register(Subject, CourseAdmin)
 admin.site.register(Degree)

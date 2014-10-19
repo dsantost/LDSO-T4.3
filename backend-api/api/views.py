@@ -1,5 +1,6 @@
 from api.models import Institution, Degree
-from api.serializers import InstitutionSerializer, DegreeSerializer
+from api.serializers import InstitutionSerializer, DegreeSerializer, UserSerializer
+from django.contrib.auth.models import User
 from rest_framework import generics
 
 
@@ -21,3 +22,13 @@ class DegreeList(generics.ListCreateAPIView):
 class DegreeDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Degree.objects.all()
     serializer_class = DegreeSerializer
+
+
+class UserList(generics.ListCreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+
+class UserDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer

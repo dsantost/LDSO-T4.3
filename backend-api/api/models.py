@@ -6,13 +6,15 @@ from django.contrib.auth.models import User
 #-----------------Institution Data-----------------#
 
 class Institution(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     abbr = models.CharField(max_length=50)
     email = models.EmailField()
     phone = models.CharField(max_length=13, validators=[RegexValidator(regex='^(\+\d{3})?\d{9}$', message='Must have 9 digits (optional prefix)', code='Invalid Phone Number')])
     fax = models.CharField(max_length=13, validators=[RegexValidator(regex='^(\+\d{3})?\d{9}$', message='Must have 9 digits (optional prefix)', code='Invalid Fax Number')])
     address = models.CharField(max_length=200)
     postal_code = models.CharField(max_length=8, validators=[RegexValidator(regex='^\d{4}\-\d{3}$', message='Format: XXXX-XXX', code='Invalid Postal Code')])
+
+    #external relations
     city = models.ForeignKey('City')
     category = models.ForeignKey('Category')
     higher_up = models.ForeignKey('Institution', blank=True, null=True)
@@ -40,7 +42,7 @@ class Degree(models.Model):
         return self.abbr
 
 
-class Course(models.Model):
+class Subject(models.Model):
     name = models.CharField(max_length=100)
     abbr = models.CharField(max_length=50)
     description = models.TextField()
