@@ -1,0 +1,37 @@
+- Institution/students relation needs intermediate table for enrollment date, approval and others. Usage example: models.ManyToManyField(Person, through='Membership') in Group Model.
+-- Institutions need to be able to accept/reject students (if rejected, remove relation?).
+
+- Insertions with foreign keys need to be tested (API provided on the website does not provide insertion for foreign key fields).
+-- Should also test what happens when JSON tries to insert with non-existing/invalid foreign key.
+
+- Institution must show available degrees.
+
+- Institution must show corresponding commentaries (and each commentary must show content and user).
+-- Should anonymous commentaries be allowed?
+
+- Degree view.
+
+- Degree must have entry grade for different years. 
+-- Disregard subjects/year, should only account for subjects currently available.
+
+- Students need a way to fill-in grades.
+-- Should grades be automatically available for filling-in when a user is associated with an institution?
+--- Students may be associated with many institutions, however. Should save the one he's currently enrolled in?
+
+- Students need to able to upload/create CV.
+
+- Student/s view.
+
+- Students should be able to set profile visibility (available to everyone or only registered users?).
+
+- On website, when creating a new institution, a list of different categories must be available. Create API route for it?
+-- How are new institutions going to be added? Manually? If so, available to whom? Root only?
+
+- Should consider optimizations. When listing ONLY institution-names on the website, do we really need to grab detailed info for all of them?
+-- Is it possible to use current API to select only specific fields?
+
+- Image system for institutions.
+
+- Customization makes a user-friendly website. Allow users to pick favorite subjects?
+-- Profile customization? 
+--- Facebook, Twitter, personal website linking?
