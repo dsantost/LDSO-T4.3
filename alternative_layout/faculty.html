@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>uni-X</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+	<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false">
+</script>
+
+<script>
+function initialize()
+{
+var mapProp = {
+  center:new google.maps.LatLng(41.177770, -8.597331),
+  zoom:15,
+  mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+var map=new google.maps.Map(document.getElementById("googleMap")
+  ,mapProp);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">uni-X</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#estudantes">Estudantes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#universidades">Universidades</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#cursos">Cursos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#perfil">Perfil</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header style="text-align: left; background-image: url(img/universities/feup.jpg);">
+        <div class="container">
+            <div class="intro-text">
+				<div class="intro-heading">FEUP</div>
+				<div class="intro-lead-in">Universidade do Porto</div>
+            </div>
+        </div>
+    </header>
+	
+		<!-- Sidebar -->
+	<div class="container">
+		<div class="row">
+			<!--left-->
+			<div class="col-md-2" id="leftCol">
+				<ul class="nav nav-stacked" id="sidebar">
+				  <li><h5><a>« voltar à Universidade do Porto</a></h5></li>
+				  <li><h3>Faculdade de Engenharia</h3></li>
+				  <li><a href="#apresentacao"><h5>Apresentação</h5></a></li>
+				  <li><a href="#cursos_fac"><h5>Cursos</h5></a></li>
+				  <li><a href="#instalacoes"><h5>Instalações</h5></a></li>
+				  <li><a href="#alunos"><h5>Alunos</h5></a></li>
+				  <li><a href="#comentarios"><h5>Comentários</h5></a></li>
+				  <li><a href="#sabermais"><h5>Saber mais</h5></a></li>
+				  <li><a href="#contacto"><h5>Contacte-nos</h5></a></li>
+				</ul>
+			</div><!--/left-->
+	
+	<!-- Intro Section -->
+	<div class="col-md-10">
+    <section id="apresentacao">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 text-center">
+					<img src="img/UP/logo_feup.jpg" width="500" align="center"></img>
+                    <h2 class="section-heading"><br>Apresentação</h2>
+                    <h3 class="section-subheading text-muted">Na FEUP são ministrados diversos cursos de pré e pós graduação nos vários ramos da Engenharia. Com origens que datam do século XVIII, a Instituição passou a designar-se Faculdade de Engenharia em 1926.</h3>
+
+<p align="left">
+A FEUP orgulha-se em ser a primeira instituição portuguesa com todos os cursos de Engenharia reconhecidos pela ENAEE (European Network for Accreditation of Engineering Education) através da atribuição da Marca de Qualidade EUR-ACE. São eles os Mestrados Integrados em Engenharia Mecânica, Engenharia Civil, Engenharia Química, Engenharia Informática e Computação, Engenharia Eletrotécnica e de Computadores, Engenharia Industrial e Gestão, Engenharia do Ambiente, Engenharia Metalúrgica e de Materiais, Bioengenharia e o Mestrado em Engenharia de Minas e Geo-ambiente. Esta qualificação coloca a FEUP num patamar inédito ao nível do ensino superior em Portugal, dando uma maior dimensão europeia aos diplomas da FEUP, o que deverá potenciar uma maior aceitação de engenheiros da FEUP por toda a Europa.2
+<br>
+O lema da FEUP, partilhado com a Faculdade de Ciências da Universidade do Porto, Virtus Unita Fortius Agit - A união faz a força, transpõe o sentimento comum a todos os alunos desta instituição pela mesma e pela vontade de aprender. A cor da FEUP é cor de Engenharia, cor esta um símbolo do que é ser Engenheiro: fazer.				</p>
+                </div>
+            </div>
+		</div>
+	</section>
+	
+	<!-- Faculty Section -->
+    <section id="cursos_fac" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 text-center">
+                    <h2 class="section-heading">Cursos</h2>
+                    <h3 class="section-subheading text-muted">Inúmeros cursos, o mesmo padrão de exigência.</h3>
+                </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-10 span4 collapse-group" align="center">
+				  <p><a class="btn btn-xl" data-toggle="collapse" data-target="#viewl">Licenciaturas</a></p>
+				  <div class="collapse" id="viewl" align="center">
+						<br><a>Licenciatura em Ciência da Informação</a>
+						<br><a>Licenciatura em Ciências da Comunicação: Jornalismo, Assessoria, Multimédia</a>
+						<br><a>Licenciatura em Ciências de Engenharia - Engenharia de Minas e Geo-Ambiente</a>
+					    <br><br><br>
+				   </div>
+			  </div>
+			  
+			  <div class="col-lg-10 span4 collapse-group" align="center">
+				   <p><a class="btn btn-xl" data-toggle="collapse" data-target="#viewmi">Mestrados Integrados</a></p>
+				   <div class="collapse" id="viewmi" align="center">
+						<br><a>Mestrado Integrado em Bioengenharia</a>
+						<br><a>Mestrado Integrado em Engenharia Civil Web</a>
+						<br><a>Mestrado Integrado em Engenharia do Ambiente</a>
+						<br><a>Mestrado Integrado em Engenharia Electrotécnica e de Computadores</a>
+						<br><a>Mestrado Integrado em Engenharia Industrial e Gestão</a>
+						<br><a>Mestrado Integrado em Engenharia Informática e Computação</a>
+						<br><a>Mestrado Integrado em Engenharia Mecânica</a>
+						<br><a>Mestrado Integrado em Engenharia Metalúrgica e de Materiais</a>
+						<br><a>Mestrado Integrado em Engenharia Química</a>
+						<br><br><br>
+				   </div>
+			  </div>
+			  
+			  <div class="col-lg-10 span4 collapse-group" align="center">
+				   <p><a class="btn btn-xl" data-toggle="collapse" data-target="#viewm">Mestrados</a></p>
+				   <div class="collapse" id="viewm" align="center">
+						<br><a>Design Industrial e de Produto</a>
+						<br><a>Mestrado em Ciência da Informação</a>
+						<br><a>Mestrado em Ciências da Comunicação</a>
+						<br><a>Mestrado em Engenharia Biomédica</a>
+						<br><a>Mestrado em Engenharia da Informação Web</a>
+						<br><a>Mestrado em Engenharia de Minas e Geo-Ambiente</a>
+						<br><a>Mestrado em Engenharia de Segurança e Higiene Ocupacionais Web</a>
+						<br><a>Mestrado em Engenharia de Serviços e Gestão</a>
+						<br><a>Mestrado em Inovação e Empreendedorismo Tecnológico Web</a>
+						<br><a>Mestrado em Mecânica Computacional</a>
+						<br><a>Mestrado em Multimédia</a>
+						<br><a>Mestrado em Planeamento e Projecto Urbano</a>
+					    <br><br><br>
+				   </div>
+			</div>
+			  
+			  <div class="col-lg-10 span4 collapse-group" align="center">
+				   <p><a class="btn btn-xl" data-toggle="collapse" data-target="#viewd">Doutoramentos</a></p>
+				   <div class="collapse" id="viewd" align="center">
+						<br><a>Doutoramento em Informática</a>
+						<br><a>Doutoramento em Matemática Aplicada</a>
+						<br><a>Programa Doutoral em Engenharia Biomédica</a>
+						<br><a>Programa Doutoral em Engenharia Civil</a>
+						<br><a>Programa Doutoral em Engenharia da Refinação, Petroquímica e Química Web</a>
+						<br><a>Programa Doutoral em Engenharia de Minas e Geo-Recursos</a>
+						<br><a>Programa Doutoral em Engenharia do Ambiente</a>
+						<br><a>Programa Doutoral em Engenharia e Políticas Públicas Web</a>
+						<br><a>Programa Doutoral em Engenharia Eletrotécnica e de Computadores Web</a>
+						<br><a>Programa Doutoral em Engenharia Física</a>
+						<br><a>Programa Doutoral em Engenharia Industrial e Gestão</a>
+						<br><a>Programa Doutoral em Engenharia Informática Web</a>
+						<br><a>Programa Doutoral em Engenharia Mecânica Web</a>
+						<br><a>Programa Doutoral em Engenharia Metalúrgica e de Materiais</a>
+						<br><a>Programa Doutoral em Engenharia Química e Biológica Web</a>
+						<br><a>Programa Doutoral em Líderes para Indústrias Tecnológicas</a>
+						<br><a>Programa Doutoral em Media Digitais</a>
+						<br><a>Programa Doutoral em Planeamento do Território</a>
+						<br><a>Programa Doutoral em Segurança e Saúde Ocupacionais Web</a>
+						<br><a>Programa Doutoral em Sistemas de Transportes</a>
+						<br><a>Programa Doutoral em Sistemas Sustentáveis de Energia Web</a>
+						<br><a>Programa Doutoral em Telecomunicações Web</a>
+					    <br><br><br>
+				   </div>
+			  </div>
+            </div>
+        </div>
+    </section>
+	
+	<!-- Gallery Section -->
+    <section id="instalacoes">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 text-center">
+                    <h2 class="section-heading">Instalações</h2>
+                    <h3 class="section-subheading text-muted">Veja a galeria de fotografias das nossas instalações.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10" align="center">
+				
+                    <div class="carousel slide article-slide" id="article-photo-carousel">
+					  <div class="carousel-inner cont-slider">
+						<div class="item active">
+						  <img alt="" title="" src="img/UP/feup_1.jpg">
+						</div>
+						<div class="item">
+						  <img alt="" title="" src="img/UP/feup_2.jpg">
+						</div>
+						<div class="item">
+						  <img alt="" title="" src="img/UP/feup_3.jpg">
+						</div>
+						<div class="item">
+						  <img alt="" title="" src="img/UP/feup_4.jpg">
+						</div>
+					  </div>
+
+					  <ol class="carousel-indicators">
+						<li class="active" data-slide-to="0" data-target="#article-photo-carousel">
+						  <img alt="" src="img/UP/feup_1.jpg">
+						</li>
+						<li class="" data-slide-to="1" data-target="#article-photo-carousel">
+						  <img alt="" src="img/UP/feup_2.jpg">
+						</li>
+						<li class="" data-slide-to="2" data-target="#article-photo-carousel">
+						  <img alt="" src="img/UP/feup_3.jpg">
+						</li>
+						<li class="" data-slide-to="3" data-target="#article-photo-carousel">
+						  <img alt="" src="img/UP/feup_4.jpg">
+						</li>
+					  </ol>
+					</div>
+					
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="alunos" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 text-center">
+                    <h2 class="section-heading">Os nossos alunos</h2>
+                    <h3 class="section-subheading text-muted">Nos quais depositamos o nosso futuro.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Daniel Teixeira</h4>
+                        <p class="text-muted">ei10067@fe.up.pt</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Diogo Ribeiro</h4>
+                        <p class="text-muted">ei11005@fe.up.pt</p>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Hugo Cardoso</h4>
+                        <p class="text-muted">ei11154@fe.up.pt</p>
+                    </div>
+                </div>
+				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/4.jpg" class="img-responsive img-circle" alt="">
+                        <h4>João Monteiro</h4>
+                        <p class="text-muted">ei11055@fe.up.pt</p>
+                    </div>
+                </div>
+				<div class="col-sm-3">
+                    <div class="team-member">
+                        <img src="img/team/5.jpg" class="img-responsive img-circle" alt="">
+                        <h4>Vasco Gomes</h4>
+                        <p class="text-muted">ei11161@fe.up.pt</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 text-center">
+                    <p class="large text-muted"><a>Ver mais...</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+	
+	<!-- Comments -->
+	<section id="comentarios">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-10 text-center">
+				<h2 class="section-heading">Comentários</h2>
+				<h3 class="section-subheading text-muted">Opiniões sobre a nossa faculdade.</h3>
+			</div>
+        </div>
+		<div class="col-lg-10">
+		<ol class="comment-list media-list">
+			
+			<li id="comment-3" class="comment even thread-even depth-1 parent">
+				<article id="div-comment-3" class="comment-body media">
+					<a class="pull-left" href="#">
+						<img alt='' src="img/team/4.jpg" class='avatar avatar-50 photo' height='50' width='50' /></a>
+			
+					<div class="media-body">
+						<div class="media-body-wrap panel">
+					
+							<h5 class="media-heading"><cite class="fn">João Monteiro</cite> <span class="says"></span></h5>
+							<p class="comment-meta">
+								<a>
+									<time>4 de outubro de 2014, 10:49</time>
+								</a></p>
+						
+							<div class="comment-content">
+								<p>Estou na UP desde 2011 e posso dizer que é uma unibersidade muito boa. Sou aluno da FEUP e a nossa é a melhor faculdade da melhor unibersidade do melhor país.</p>
+							</div>
+					
+							<div class="col-md-2">
+								<footer class="reply comment-reply panel-footer">
+									<a class="btn btn-xs">Responder</a>
+								</footer><p>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<ul class="children">
+					<li id="comment-1499" class="comment odd alt depth-2">
+						<article id="div-comment-1499" class="comment-body media">
+							<a class="pull-left" href="#">
+								<img alt='' src="img/team/1.jpg" class='avatar avatar-50 photo' height='50' width='50' />
+							</a>
+							<div class="media-body">
+								<div class="media-body-wrap panel">
+									<h5 class="media-heading"><cite class="fn">Daniel Teixeira</cite> <span class="says"></span></h5>
+									<p class="comment-meta">
+									<a>
+										<time>4 de outubro de 2014, 10:51</time>
+									</a></p>
+									<div class="comment-content">
+										<p>*universidade</p>
+									</div><!-- .comment-content -->
+									<div class="col-md-2">	
+										<footer class="reply comment-reply panel-footer">
+											<a class="btn btn-xs">Responder</a></footer><p>
+									</div>
+								</div>
+							</div>
+						</article>
+					</li>
+				</ul>
+			</li>
+
+			<article id="div-comment-3" class="comment-body media">
+				<a class="pull-left" href="#">
+					<img alt='' src="img/team/2.jpg" class='avatar avatar-50 photo' height='50' width='50' /></a>
+				<div class="media-body">
+					<div class="media-body-wrap panel">
+						<h5 class="media-heading"><cite class="fn">Diogo Ribeiro</cite> <span class="says"></span></h5>
+						<p class="comment-meta">
+							<a>
+								<time>10 de outubro de 2014, 22:12</time>
+							</a>
+						</p>
+						<div class="comment-content">
+							<p>Se vais ser caloiro, manda-me MP. Posso-te responder ao que quiseres sobre a UP.</p>
+						</div>
+						<div class="col-md-2">
+							<footer class="reply comment-reply panel-footer">
+								<a class="btn btn-xs">Responder</a>
+							</footer><p>
+						</div>
+					</div>
+				</div>
+			</article>
+
+			<article id="div-comment-3" class="comment-body media">
+				<a class="pull-left" href="#">
+					<img alt='' src="img/team/3.jpg" class='avatar avatar-50 photo' height='50' width='50' /></a>
+				<div class="media-body">
+					<div class="media-body-wrap panel">
+						<h5 class="media-heading"><cite class="fn">Hugo Cardoso</cite> <span class="says"></span></h5>
+						<p class="comment-meta">
+							<a>
+								<time>13 de outubro de 2014, 02:14</time>
+							</a></p>
+						<div class="comment-content">
+							<p>UP FTW, FEUP FTW, ISEP FTL.</p>
+						</div>
+						<div class="col-md-2">
+							<footer class="reply comment-reply panel-footer">
+								<a class="btn btn-xs">Responder</a>
+							</footer><p>
+						</div>
+					</div>
+				</div>
+			</article>
+			
+			<article id="div-comment-3" class="comment-body media">
+				<a class="pull-left" href="#">
+					<img alt='' src="img/team/5.jpg" class='avatar avatar-50 photo' height='50' width='50' /></a>
+				<div class="media-body">
+					<div class="media-body-wrap panel">
+						<h5 class="media-heading"><cite class="fn">Vasco Gomes</cite> <span class="says"></span></h5>
+						<p class="comment-meta">
+							<a>
+								<time>19 de outubro de 2014, 17:26</time>
+							</a></p>
+						<div class="comment-content">
+							<p>Estou no MIEIC na FEUP na UP em PT na UE.</p>
+						</div>
+						<div class="col-md-2">
+							<footer class="reply comment-reply panel-footer">
+								<a class="btn btn-xs">Responder</a>
+							</footer><p>
+						</div>
+					</div>
+				</div>
+			</article>
+		</ol>
+		
+
+		<div id="respond" class="comment-respond">
+			<h3 id="reply-title" class="comment-reply-title">Deixe um comentário<small><a rel="nofollow" id="cancel-comment-reply-link" style="display:none;">Cancelar</a></small></h3>
+			<form method="post" id="commentform" class="comment-form">
+				<p><textarea placeholder="Escreva aqui..." id="comment" class="form-control" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>
+				<input name="submit" type="submit" id="commentsubmit" class="btn btn-xl" value="Publicar comentário" />
+						<input type='hidden' name='comment_post_ID' value='155' id='comment_post_ID' />
+						<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+					</p>
+			</form>
+		</div>	</div> </div>
+	</section>
+	
+	<!-- More -->
+    <section id="sabermais" class="bg-light-gray">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 text-center">
+                    <h2 class="section-heading">Saber mais</h2>
+                    <h3 class="section-subheading text-muted">Ligações pertinentes para descobrir mais sobre a nossa universidade.</h3>
+					<h4><a href="www.fe.up.pt">Site oficial</a>
+					<br><br><a href="http://pt.wikipedia.org/wiki/Faculdade_de_Engenharia_da_Universidade_do_Porto">Wikipedia</a><br><br>
+					</h4>
+					<div id="googleMap" style="width:910px;height:300px;"></div>
+                </div>
+            </div>
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<section id="contacto">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 text-center">
+                    <h2 class="section-heading">Contacte-nos</h2>
+                    <h3 class="section-subheading text-muted">Responderemos o mais brevemente possível.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="O seu nome *" id="name" required data-validation-required-message="Por favor introduza o seu nome.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="O seu e-mail *" id="email" required data-validation-required-message="Por favor introduza o seu e-mail.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="O seu número de telefone *" id="phone" required data-validation-required-message="Por favor introduza o seu número de telefone.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="A sua mensagem *" id="message" required data-validation-required-message="Por favor introduza a sua mensagem."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Enviar mensagem</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+			<p><p><p>
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; uni-X 2014</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="mailto:ei11161@fe.up.pt"><i class="fa fa-envelope"></i></a>
+                        </li>
+                        <li><a href="https://github.com/dsantost/LDSO-T4.3"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li><a href="https://www.pivotaltracker.com/n/projects/1172810"><i class="fa fa-tasks"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="https://github.com/dsantost/LDSO-T4.3/wiki">Wiki</a>
+                        </li>
+                        <li><a href="https://moodle.up.pt/course/view.php?id=2580">Moodle</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- perfil Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>
+
+</html>

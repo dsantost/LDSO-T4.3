@@ -48,3 +48,8 @@ $('a[href*=#]:not([href=#])').click(function() {
       }
     }
 });
+
+// Stop carousel
+$('.carousel').carousel({
+  interval: false
+});
