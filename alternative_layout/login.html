@@ -14,6 +14,9 @@
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- MetisMenu CSS -->
+    <link href="css/plugins/metisMenu/metisMenu.min.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
 
@@ -33,10 +36,10 @@
 
 </head>
 
-<body id="page-top" class="index">
+<body>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+ <!-- Navigation -->
+    <nav class="navbar navbar-default" style="background:#222">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
@@ -76,58 +79,43 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <div class="intro-text">
-                <div class="intro-lead-in">Saiba tudo sobre as universidades e os seus alunos</div>
-                <div class="intro-heading">Basta passar pelo Portal</div>
-                <a href="#registar" class="page-scroll btn btn-xl">Registar</a>
-				<h4 class="section-subheading"><a href="#login">Entrar</a></h4>
-            </div>
-        </div>
-    </header>
-
-    <!-- sobre Section -->
-    <section id="sobre">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Sobre</h2>
-					<h3 class="section-subheading text-muted">O Portal Académico é um site para todos. As universidades podem publicitar os seus cursos, os alunos de secundário podem tomar decisões informadas sobre o seu futuro, os alumni podem publicar os seus portfólios e as empresas podem encontrar funcionários!</h3>
-                </div>
-            </div>
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-book fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Estudantes</h4>
-                    <p class="text-muted">És um candidato ao ensino superior? Descobre tudo sobre as tuas preferências e entra em contacto com alunos da tua universidade de escolha!</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-building fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Empresas</h4>
-                    <p class="text-muted"> Com filtros robustos e simples de usar, encontre novos talentos, explore os seus portfólios e entre em contacto com eles!</p>
-                </div>
-                <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <h4 class="service-heading">Alumni</h4>
-                    <p class="text-muted">Acabado de sair do ensino superior e à procura de emprego? Basta associar-se à universidade que frequentou, publicar alguns dos seus trabalhos, e as empresas entram em contacto consigo!</p>
+	
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Por favor, introduza os seus dados</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="remember" type="checkbox" value="Remember Me">Memorizar dados
+                                    </label>
+                                </div>
+                                <!-- Change this to a button or input when using this as a form -->
+                                <a href="index.html" class="page-scroll btn btn-xl" style="
+    margin: -1px -70px; 
+    position:relative;
+    top:50%; 
+    left:50%;">Entrar</a>
+                            </fieldset>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer>
+    </div>
+	
+	<footer>
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
@@ -161,17 +149,11 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- perfil Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="js/plugins/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+    <script src="js/sb-admin-2.js"></script>
 
 </body>
 
