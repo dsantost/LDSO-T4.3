@@ -946,3 +946,80 @@ body {
     border: 2px solid #428BCA;
     opacity: 0.7;
 }
+
+#projetos .portfolio-item {
+    right: 0;
+    margin: 0 0 15px;
+}
+
+#projetos .portfolio-item .portfolio-link {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+#projetos .portfolio-item .portfolio-link .portfolio-hover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(254,209,54,.9);
+    -webkit-transition: all ease .5s;
+    -moz-transition: all ease .5s;
+    transition: all ease .5s;
+}
+
+#projetos .portfolio-item .portfolio-link .portfolio-hover:hover {
+    opacity: 1;
+}
+
+#projetos .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 20px;
+    margin-top: -12px;
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+}
+
+#projetos .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+    margin-top: -12px;
+}
+
+#projetos .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#projetos .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+    margin: 0;
+}
+
+#projetos .portfolio-item .portfolio-caption {
+    margin: 0 auto;
+    padding: 25px;
+    max-width: 400px;
+    text-align: center;
+    background-color: #fff;
+}
+
+#projetos .portfolio-item .portfolio-caption h4 {
+    margin: 0;
+    text-transform: none;
+}
+
+#projetos .portfolio-item .portfolio-caption p {
+    margin: 0;
+    font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+#projetos * {
+    z-index: 2;
+}
+
+@media(min-width:767px) {
+    #projetos .portfolio-item {
+        margin: 0 0 30px;
+    }
+}
