@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from api.models import Institution, Degree
+from api.models import Institution, Degree, City
 from django.contrib.auth.models import User
 
 
@@ -11,7 +11,15 @@ class InstitutionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Institution
-        fields = ('name', 'abbr', 'email', 'phone', 'fax', 'address', 'postal_code', 'city', 'category', 'higher_up', 'students',)
+        fields = ('id', 'name', 'abbr', 'email', 'phone', 'fax', 'address', 'postal_code', 'city', 'category', 'higher_up', 'students',)
+
+
+class InstitutionsSerializer(serializers.ModelSerializer):
+    category = serializers.Field(source='category.name')
+
+    class Meta:
+        model = Institution
+        fields = ('id', 'name', 'abbr', 'category')
 
 
 class DegreeSerializer(serializers.ModelSerializer):
@@ -19,11 +27,17 @@ class DegreeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Degree
-        fields = ('name', 'abbr', 'code', 'entry_grade', 'institution')
+        fields = ('id', 'name', 'abbr', 'code', 'entry_grade', 'institution')
 
 
 class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ('username', 'password')
+        fields = ('id', 'username', 'password')
+
+
+class CitySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = City
+        fields = ('id', 'name')

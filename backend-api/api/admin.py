@@ -10,7 +10,7 @@ class InstitutionAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'higher_up', 'student_count')
 
 
-class CourseAdmin(admin.ModelAdmin):
+class SubjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'degree')
 
 admin.site.register(Institution, InstitutionAdmin)
@@ -19,5 +19,5 @@ admin.site.register(Category)
 admin.site.register(Student)
 admin.site.register(Commentary)
 admin.site.register(Company)
-admin.site.register(Subject, CourseAdmin)
+admin.site.register(Subject, SubjectAdmin)
 admin.site.register(Degree)

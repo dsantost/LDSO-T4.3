@@ -30,6 +30,9 @@ class Category(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = "Categories"
+
 
 class Degree(models.Model):
     name = models.CharField(max_length=100)
@@ -62,6 +65,7 @@ class City(models.Model):
 
     class Meta:
         ordering = ['name']
+        verbose_name_plural = "Cities"
 
 
 #-----------------User Data-----------------#
@@ -81,6 +85,9 @@ class Company(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = "Companies"
+
 
 class Commentary(models.Model):
     text = models.TextField()
@@ -92,3 +99,6 @@ class Commentary(models.Model):
         if len(self.text) < 50:
             return self.text
         return self.text[:50] + "..."
+
+    class Meta:
+        verbose_name_plural = "Commentaries"
