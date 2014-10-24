@@ -31,4 +31,32 @@ urlpatterns = format_suffix_patterns(patterns('api.views',
         url(r'^cities/$',
             views.CityList.as_view(),
             name='city-list'),
+
+        url(r'^companies/$',
+            views.CompanyList.as_view(),
+            name='company-list'),
+
+        url(r'^companies/(?P<pk>[0-9]+)/$',
+            views.CompanyDetail.as_view(),
+            name='company-detail'),
+
+        url(r'^students/$',
+            views.StudentList.as_view(),
+            name='student-list'),
+
+        url(r'^students/(?P<pk>[0-9]+)/$',
+            views.StudentDetail.as_view(),
+            name='student-detail'),
+
+        url(r'^categories/$',
+            views.CategoryList.as_view(),
+            name='category-list'),
+
+        url(r'^degrees/$',
+            views.DegreeList.as_view(),
+            name='degree-list'),
+
+        url(r'^degrees/(?P<pk>[0-9]+)/$',
+            views.DegreeDetail.as_view(),
+            name='degree-detail'),
 ))

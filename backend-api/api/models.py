@@ -13,6 +13,9 @@ class Institution(models.Model):
     fax = models.CharField(max_length=13, validators=[RegexValidator(regex='^(\+\d{3})?\d{9}$', message='Must have 9 digits (optional prefix)', code='Invalid Fax Number')])
     address = models.CharField(max_length=200)
     postal_code = models.CharField(max_length=8, validators=[RegexValidator(regex='^\d{4}\-\d{3}$', message='Format: XXXX-XXX', code='Invalid Postal Code')])
+    latitude = models.FloatField(blank=True, null=True)
+    longitude = models.FloatField(blank=True, null=True)
+    page_color = models.CharField(max_length=6, default="ffffff")
 
     #external relations
     city = models.ForeignKey('City')
@@ -38,7 +41,6 @@ class Degree(models.Model):
     name = models.CharField(max_length=100)
     abbr = models.CharField(max_length=50)
     code = models.IntegerField()
-    entry_grade = models.DecimalField(decimal_places=1, max_digits=3)
     institution = models.ForeignKey('Institution')
 
     def __unicode__(self):
@@ -55,8 +57,16 @@ class Subject(models.Model):
         return self.abbr
 
 
-#-----------------Misc Data-----------------#
+class EntryGrade(models.Model):
+    degree = models.ForeignKey('Degree', related_name='entry_grades')
+    year = models.IntegerField()
+    value = models.FloatField()
 
+    def __unicode__(self):
+        return str(self.value)
+
+
+#-----------------Misc Data-----------------#
 class City(models.Model):
     name = models.CharField(max_length=100)
 
@@ -71,8 +81,17 @@ class City(models.Model):
 #-----------------User Data-----------------#
 
 class Student(models.Model):
-    name = models.CharField(max_length=100)
     user = models.OneToOneField(User)
+
+    name = models.CharField(max_length=100)
+    age = models.IntegerField(blank=True, null=True)
+    city = models.ForeignKey('City', blank=True, null=True)
+
+    profile_visibility = models.BooleanField(default=True)
+    facebook_link = models.URLField(max_length=150, blank=True, null=True)
+    linkedin_link = models.URLField(max_length=150, blank=True, null=True)
+    twitter_link = models.URLField(max_length=150, blank=True, null=True)
+    github_link = models.URLField(max_length=150, blank=True, null=True)
 
     def __unicode__(self):
         return self.name
