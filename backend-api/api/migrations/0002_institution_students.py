@@ -7,12 +7,14 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0002_student_name'),
+        ('api', '0001_initial'),
     ]
 
     operations = [
-        migrations.RemoveField(
+        migrations.AddField(
             model_name='institution',
-            name='higherup',
+            name='students',
+            field=models.ManyToManyField(to='api.Student', through='api.Enrollment'),
+            preserve_default=True,
         ),
     ]

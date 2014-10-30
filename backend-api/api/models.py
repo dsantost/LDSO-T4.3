@@ -21,7 +21,7 @@ class Institution(models.Model):
     city = models.ForeignKey('City')
     category = models.ForeignKey('Category')
     higher_up = models.ForeignKey('Institution', blank=True, null=True)
-    students = models.ManyToManyField('Student', blank=True, null=True)
+    students = models.ManyToManyField('Student', through='Enrollment')
 
     def __unicode__(self):
         return self.name
@@ -41,7 +41,7 @@ class Degree(models.Model):
     name = models.CharField(max_length=100)
     abbr = models.CharField(max_length=50)
     code = models.IntegerField()
-    institution = models.ForeignKey('Institution')
+    institution = models.ForeignKey('Institution', related_name="degrees")
 
     def __unicode__(self):
         return self.abbr
@@ -51,7 +51,7 @@ class Subject(models.Model):
     name = models.CharField(max_length=100)
     abbr = models.CharField(max_length=50)
     description = models.TextField()
-    degree = models.ForeignKey('Degree')
+    degree = models.ForeignKey('Degree', related_name="subjects")
 
     def __unicode__(self):
         return self.abbr
@@ -108,11 +108,11 @@ class Company(models.Model):
         verbose_name_plural = "Companies"
 
 
-class Commentary(models.Model):
+class Comment(models.Model):
     text = models.TextField()
     pub_date = models.DateTimeField('date published')
-    user = models.ForeignKey(User)
-    institution = models.ForeignKey('Institution')
+    user = models.ForeignKey(User, related_name='comments')
+    institution = models.ForeignKey('Institution', related_name='comments')
 
     def __unicode__(self):
         if len(self.text) < 50:
@@ -120,4 +120,11 @@ class Commentary(models.Model):
         return self.text[:50] + "..."
 
     class Meta:
-        verbose_name_plural = "Commentaries"
+        verbose_name_plural = "Comments"
+
+
+class Enrollment(models.Model):
+    institution = models.ForeignKey('Institution')
+    student = models.ForeignKey('Student', related_name='enrollments')
+    year = models.IntegerField()
+    active = models.BooleanField(default=True)
