@@ -37,7 +37,7 @@
 <!-- load up our app -->
 <script src="js/instituicao/instituicao.js"></script>
 </head>
-<body id="page-top" class="index">
+<body id="page-top" class="index" ng-controller="BgCtrl as bg">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -80,11 +80,11 @@
         <!-- /.container-fluid -->
     </nav>
     <!-- Header -->
-    <header ng-controller="BgCtrl as bg" ng-style="{'background-image' : '{{bg.institution[0].bgImg}}'}" >
+    <header ng-style="{'background-image' : '{{bg.institution.bgImg}}'}" >
         <div class="container">
             <div class="intro-text">
-                <div class="intro-heading">{{bg.institution[0].name}}</div>
-                <div class="intro-lead-in">{{bg.institution[0].local}}</div>
+                <div class="intro-heading">{{bg.institution.name}}</div>
+                <div class="intro-lead-in">{{bg.institution.local}}</div>
             </div>
         </div>
     </header>
@@ -104,7 +104,7 @@
 			<!--left-->
 			<div class="col-md-2" id="leftCol">
 				<ul class="nav nav-stacked" id="sidebar">
-				  <li><h3>Universidade do Porto</h3></li>
+				  <li><h3>{{bg.institution.sidebarTitle}}</h3></li>
 				  <li><a href="#apresentacao"><h5>Apresentação</h5></a></li>
 				  <li><a href="#faculdades"><h5>Faculdades</h5></a></li>
 				  <li><a href="#historia"><h5>História</h5></a></li>
@@ -123,27 +123,9 @@
                 <div class="col-lg-10 text-center">
 					<img src="img/UP/logo.jpg" width="500" align="center"></img>
                     <h2 class="section-heading"><br>Apresentação</h2>
-                    <h3 class="section-subheading text-muted">Com origens que remontam ao século XVIII, a Universidade do Porto é uma das maiores instituições de ensino e investigação científica de Portugal e uma das 100 melhores universidades da Europa.</h3>
+                    <h3 class="section-subheading text-muted">{{bg.institution.presSub}}</h3>
 
-<p align="left">
-Mais de 31.000 estudantes, 2.300 professores e investigadores e 1.600 funcionários não docentes frequentam as suas 15 escolas e 60 unidades de investigação, distribuídas por três polos universitários localizados na cidade do Porto.
-<br>
-Com 14 faculdades e uma business school, a Universidade do Porto oferece uma excecional variedade de cursos, que abrangem todos os níveis de ensino superior e todas as grandes áreas do conhecimento. Na verdade, com mais de 600 programas de formação (das licenciaturas aos doutoramentos, passando pela educação contínua), a Universidade do Porto possui soluções de ensino para todos os públicos.
-<br>
-A qualificação de excelência do corpo docente (81% dos 1.608,2 docentes e investigadores ETI são doutorados) garante a elevada qualidade da formação da Universidade do Porto, que a torna na universidade portuguesa mais procurada pelos candidatos ao Ensino Superior e a preferida dos estudantes com as mais altas classificações escolares.
-<br>
-Todos os anos, cerca de 3.700 estudantes estrangeiros, de 146 diferentes países do mundo, frequentam a Universidade do Porto. E se 1.810 destes estudantes chegam através de programas internacionais de mobilidade, mais de metade deles (1.890) escolheram a U.Porto para realizar a totalidade do seu curso superior.
-<br>
-A Universidade do Porto é o maior produtor de Ciência em Portugal, sendo responsável por mais de 23% dos artigos científicos portugueses indexados anualmente na ISI Web of Science.
-<br>
-De facto, alguns dos mais produtivos e internacionalmente reconhecidos centros portugueses de Investigação e Desenvolvimento pertencem à Universidade do Porto. Mais de metade das suas 60 unidades de investigação foram classificadas com “Excelente” ou “Muito Bom” nas mais recentes avaliações independentes internacionais.
-<br>
-Nos últimos anos, a U.Porto tem apostado na valorização económica das suas atividades de investigação através de parcerias com algumas das maiores empresas nacionais que já resultaram em diversas inovações com sucesso comprovado em mercados nacionais e internacionais.
-<br>
-A inovação produzida pela Universidade também já conduziu à criação de mais de 120 patentes nacionais e internacionais e outras tantas empresas. Só no UPTEC - Parque de Ciência e Tecnologia da Universidade do Porto estão incubadas mais de uma centena de startups, responsáveis pela criação de 900 novos postos de trabalho qualificados.
-<br>
-Por tudo isto, a Universidade do Porto é a instituição portuguesa com a melhor classificação nos mais importantes rankings internacionais de Ensino e Investigação Científica, que sistematicamente colocam a U.Porto entre as 350 melhores universidades do mundo.
-				</p>
+        <p align="left" ng-bind-html="bg.institution.presText| unsafe"></p>
                 </div>
             </div>
 		</div>
@@ -158,202 +140,23 @@ Por tudo isto, a Universidade do Porto é a instituição portuguesa com a melho
                     <h3 class="section-subheading text-muted">14 faculdades, 2 pólos, 1 família.</h3>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-5 portfolio-item">
+            <div class="row" >
+                <div ng-repeat="fac in bg.faculties">
+                  <div class="col-md-3 col-sm-5 portfolio-item" >
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
                         <div class="portfolio-hover">
                             <div class="portfolio-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/UP/FAUP.jpg" class="img-responsive" alt="">
+                        <img src="{{fac.img}}" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
-                        <h4>FAUP</h4>
-                        <p class="text-muted">Faculdade de Arquitectura da Universidade do Porto</p>
+                        <h4>{{fac.sigla}}</h4>
+                        <p class="text-muted">{{fac.nome}}</p>
                     </div>
-                </div>
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                               <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FBAUP.png" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FBAUP</h4>
-                        <p class="text-muted">Faculdade de Belas-Artes da Universidade do Porto</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FCUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FCUP</h4>
-                        <p class="text-muted">Faculdade de Ciências da Universidade do Porto</p>
-                    </div>
-                </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                               <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FCNAUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FCNAUP</h4>
-                        <p class="text-muted">Faculdade de Ciências da Nutrição e Alimentação da Universidade do Porto</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FADEUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FADEUP</h4>
-                        <p class="text-muted">Faculdade de Desporto da Universidade do Porto</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                               <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FDUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FDUP</h4>
-                        <p class="text-muted">Faculdade de Direito da Universidade do Porto</p>
-                    </div>
-                </div>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FEP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FEP</h4>
-                        <p class="text-muted">Faculdade de Economia da Universidade do Porto</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                               <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FEUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FEUP</h4>
-                        <p class="text-muted">Faculdade de Engenharia da Universidade do Porto</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/ICBAS_FFUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FFUP</h4>
-                        <p class="text-muted">Faculdade de Farmácia da Universidade do Porto</p>
-                    </div>
-                </div>
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                               <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FLUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FLUP</h4>
-                        <p class="text-muted">Faculdade de Letras da Universidade do Porto</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                                <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FMUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FMUP</h4>
-                        <p class="text-muted">Faculdade de Medicina da Universidade do Porto</p>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                               <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FMDUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FMDUP</h4>
-                        <p class="text-muted">Faculdade de Medicina Dentária da Universidade do Porto</p>
-                    </div>
-                </div>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                               <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/FPCEUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>FPCEUP</h4>
-                        <p class="text-muted">Faculdade de Psicologia e de Ciências da Educação da Universidade do Porto</p>
-                    </div>
-                </div>
-				<div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                            <div class="portfolio-hover-content">
-                               <i class="fa fa-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/UP/ICBAS_FFUP.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>ICBAS</h4>
-                        <p class="text-muted">Instituto de Ciências Biomédicas Abel Salazar</p>
-                    </div>
+                  </div>
+                    <br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0">
                 </div>
             </div>
         </div>
