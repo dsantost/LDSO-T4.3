@@ -163,78 +163,37 @@
     </section>
 	
 	<!-- History Section -->
-    <section id="historia">
+    <section id="historia" ng-controller="histCtrl as hc">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 text-center">
                     <h2 class="section-heading">História</h2>
-                    <h3 class="section-subheading text-muted">Há mais de um século a criar profissionais de excelência.</h3>
+                    <h3 class="section-subheading text-muted">{{hc.hist.subTitle}}</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-10">
                     <ul class="timeline">
-                        <li>
+                        <li class="timeline-inverted" ng-repeat="cont in hc.hist.content">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/UP/1.jpg" alt="">
+                                <img class="img-circle img-responsive" src="{{cont.image}}" alt="">
+
                             </div>
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
-                                    <h4>Março 1911</h4>
-                                    <h4 class="subheading">Fundação da Universidade</h4>
+                                    <h4>{{cont.heading}}</h4>
+                                    <h4 class="subheading">{{cont.subheading}}</h4>
                                 </div>
                                 <div class="timeline-body">
-                                    <p class="text-muted">A Universidade do Porto foi fundada por decreto de 22 de Março de 1911, emanado do Governo Provisório da República. Se bem que seja possível apontar como as suas antecessoras mais remotas a Aula de Náutica, estabelecida por D. José I em 1762, e a Aula de Debuxo e Desenho, criada por D. Maria I em 1779, a Universidade vai basear-se fundamentalmente sobre instituições de ensino superior criadas no século XIX: a Academia Politécnica e a Escola Médico-Cirúrgica do Porto.</p>
+                                    <p class="text-muted">
+                                        {{cont.contentText}}
+                                    </p>
                                 </div>
                             </div>
                         </li>
                         <li class="timeline-inverted">
                             <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/UP/2.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Abril 1911</h4>
-                                    <h4 class="subheading">Primeira grande reestruturação</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">A implantação da República, em 5 de Outubro de 1910, provocou importantes modificações no campo do ensino, nomeadamente a criação de duas universidades, a de Lisboa e a do Porto. Pelo decreto de 19 de Abril de 1911, a Universidade do Porto ficou assim constituída: uma Faculdade de Ciências Matemáticas, Físico-Químicas e Histórico-Naturais, uma Faculdade de Medicina com uma Escola de Farmácia anexa e ainda uma Faculdade de Comércio que nunca se concretizou. A Faculdade de Ciências anexava uma Escola de Engenharia.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/UP/3.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Julho 1911</h4>
-                                    <h4 class="subheading">Inauguração</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">A UP foi inaugurada a 16 de Julho de 1911 e, nesse mesmo dia, foi eleito o primeiro Reitor, o matemático Gomes Teixeira. A partir de agora é confiado à Universidade o seu próprio governo económico e científico. Também a autonomia do ensino é reconhecida. O governo da Universidade pertence aos corpos Académicos: Senado, Assembleia Geral dos Professores, Conselhos das Faculdades e Escolas e aos seus Delegados efectivos - Director e Reitor.</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <img class="img-circle img-responsive" src="img/UP/4.jpg" alt="">
-                            </div>
-                            <div class="timeline-panel">
-                                <div class="timeline-heading">
-                                    <h4>Abril 1974</h4>
-                                    <h4 class="subheading">Expansão pós-revolução</h4>
-                                </div>
-                                <div class="timeline-body">
-                                    <p class="text-muted">A Universidade do Porto conheceu uma grande expansão com a revolução de Abril de 1974. Às seis faculdades existentes juntaram-se, como criação de raiz ou escolas integradas, as seguintes: ICBAS - Instituto de Ciências Biomédicas Abel Salazar (1975), Faculdade de Ciências do Desporto e de Educação Física (1975), Faculdade de Psicologia e de Ciências da Educação (1977), Faculdade de Arquitectura (1979), Faculdade de Medicina Dentária (1989), Faculdade de Ciências da Nutrição e da Alimentação (1992), Faculdade de Belas Artes (1992) e Faculdade de Direito (1994).</p>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="timeline-inverted">
-                            <div class="timeline-image">
-                                <h4>Faz
-									<br>história
-                                    <br>connosco!</h4>
+                                <h4 ng-bind-html="hc.hist.last| unsafe"></h4>
                             </div>
                         </li>
                     </ul>
