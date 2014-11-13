@@ -17,6 +17,13 @@ inst.controller('histCtrl',function(){
   this.hist=historyVar;
 });
 
+inst.controller('studentCtrl',function(){
+  this.students=students;
+});
+
+inst.controller('commentCtrl',function(){
+  this.comment=commentVar;
+});
 inst.controller('initMap',function(){
     var mapProp = {
       center:new google.maps.LatLng(41.146661, -8.615571),
@@ -67,6 +74,82 @@ var historyVar = {
   ],
   last:'Faz <br />história <br />connosco!'
 };
+
+var students = {
+  heading:'Os nossos alunos',
+  subheading:'Nos quais depositamos o nosso futuro.',
+  content:[
+    {
+      image:'img/team/1.jpg',
+      name:'Daniel Teixeira',
+      mail:'ei10067@fe.up.pt'
+    },
+    {
+      image:'img/team/2.jpg',
+      name:'Diogo Ribeiro',
+      mail:'ei11005@fe.up.pt'
+    },
+    {
+      image:'img/team/3.jpg',
+      name:'Hugo Cardoso',
+      mail:'ei11154@fe.up.pt'
+    },
+    {
+      image:'img/team/4.jpg',
+      name:'João Monteiro',
+      mail:'ei11055@fe.up.pt'
+    },
+    {
+      image:'img/team/5.jpg',
+      name:'Vasco Gomes',
+      mail:'ei11161@fe.up.pt'
+    },
+  ]
+};
+
+var commentVar=[
+  {
+    image:'img/team/4.jpg',
+    name:'João Monteiro',
+    date:'4 de outubro de 2014, 10:49',
+    comment:'Estou na UP desde 2011 e posso dizer que é uma unibersidade muito boa. Sou aluno da FEUP e a nossa é a melhor faculdade da melhor unibersidade do melhor país.',
+    replies:[
+      {
+        image:'img/team/1.jpg',
+        name:'Daniel Teixeira',
+        date:'4 de outubro de 2014, 10:51',
+        comment:'*universidade'
+      },
+    ]
+  },
+  {
+    image:'img/team/2.jpg',
+    name:'Diogo Ribeiro',
+    date:'10 de outubro de 2014, 22:12',
+    comment:'Se vais ser caloiro, manda-me MP. Posso-te responder ao que quiseres sobre a UP.',
+    replies:[
+
+    ]
+  },
+  {
+    image:'img/team/3.jpg',
+    name:'Hugo Cardoso',
+    date:'13 de outubro de 2014, 02:14',
+    comment:'UP FTW, FEUP FTW, ISEP FTL.',
+    replies:[
+
+    ]
+  },
+  {
+    image:'img/team/5.jpg',
+    name:'Vasco Gomes',
+    date:'19 de outubro de 2014, 17:26',
+    comment:'Estou no MIEIC na FEUP na UP em PT na UE.',
+    replies:[
+
+    ]
+  },
+];
 var facultiesVar = [
   {
     sigla:'FAUP',
