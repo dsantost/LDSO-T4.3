@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<django-objects version="1.0">
+<object model="api.City">
+<field name="name">Abrantes</field>
+</object>
+<object model="api.City">
+<field name="name">Agualva-Cacém</field>
+</object>
+<object model="api.City">
+<field name="name">Águeda</field>
+</object>
+<object model="api.City">
+<field name="name">Albergaria-a-Velha</field>
+</object>
+<object model="api.City">
+<field name="name">Albufeira</field>
+</object>
+<object model="api.City">
+<field name="name">Alcácer do Sal</field>
+</object>
+<object model="api.City">
+<field name="name">Alcobaça</field>
+</object>
+<object model="api.City">
+<field name="name">Alfena</field>
+</object>
+<object model="api.City">
+<field name="name">Almada</field>
+</object>
+<object model="api.City">
+<field name="name">Almeirim</field>
+</object>
+<object model="api.City">
+<field name="name">Alverca do Ribatejo</field>
+</object>
+<object model="api.City">
+<field name="name">Amadora</field>
+</object>
+<object model="api.City">
+<field name="name">Amarante</field>
+</object>
+<object model="api.City">
+<field name="name">Amora</field>
+</object>
+<object model="api.City">
+<field name="name">Anadia</field>
+</object>
+<object model="api.City">
+<field name="name">Angra do Heroísmo</field>
+</object>
+<object model="api.City">
+<field name="name">Aveiro</field>
+</object>
+<object model="api.City">
+<field name="name">Barcelos</field>
+</object>
+<object model="api.City">
+<field name="name">Barreiro</field>
+</object>
+<object model="api.City">
+<field name="name">Beja</field>
+</object>
+<object model="api.City">
+<field name="name">Borba</field>
+</object>
+<object model="api.City">
+<field name="name">Braga</field>
+</object>
+<object model="api.City">
+<field name="name">Bragança</field>
+</object>
+<object model="api.City">
+<field name="name">Caldas da Rainha</field>
+</object>
+<object model="api.City">
+<field name="name">Câmara de Lobos</field>
+</object>
+<object model="api.City">
+<field name="name">Caniço</field>
+</object>
+<object model="api.City">
+<field name="name">Cantanhede</field>
+</object>
+<object model="api.City">
+<field name="name">Cartaxo</field>
+</object>
+<object model="api.City">
+<field name="name">Castelo Branco</field>
+</object>
+<object model="api.City">
+<field name="name">Chaves</field>
+</object>
+<object model="api.City">
+<field name="name">Coimbra</field>
+</object>
+<object model="api.City">
+<field name="name">Costa da Caparica</field>
+</object>
+<object model="api.City">
+<field name="name">Covilhã</field>
+</object>
+<object model="api.City">
+<field name="name">Elvas</field>
+</object>
+<object model="api.City">
+<field name="name">Entroncamento</field>
+</object>
+<object model="api.City">
+<field name="name">Ermesinde</field>
+</object>
+<object model="api.City">
+<field name="name">Esmoriz</field>
+</object>
+<object model="api.City">
+<field name="name">Espinho</field>
+</object>
+<object model="api.City">
+<field name="name">Esposende</field>
+</object>
+<object model="api.City">
+<field name="name">Estarreja</field>
+</object>
+<object model="api.City">
+<field name="name">Estremoz</field>
+</object>
+<object model="api.City">
+<field name="name">Évora</field>
+</object>
+<object model="api.City">
+<field name="name">Fafe</field>
+</object>
+<object model="api.City">
+<field name="name">Faro</field>
+</object>
+<object model="api.City">
+<field name="name">Fátima</field>
+</object>
+<object model="api.City">
+<field name="name">Felgueiras</field>
+</object>
+<object model="api.City">
+<field name="name">Figueira da Foz</field>
+</object>
+<object model="api.City">
+<field name="name">Fiães</field>
+</object>
+<object model="api.City">
+<field name="name">Freamunde</field>
+</object>
+<object model="api.City">
+<field name="name">Funchal</field>
+</object>
+<object model="api.City">
+<field name="name">Fundão</field>
+</object>
+<object model="api.City">
+<field name="name">Gafanha da Nazaré</field>
+</object>
+<object model="api.City">
+<field name="name">Gandra</field>
+</object>
+<object model="api.City">
+<field name="name">Gondomar</field>
+</object>
+<object model="api.City">
+<field name="name">Gouveia</field>
+</object>
+<object model="api.City">
+<field name="name">Guarda</field>
+</object>
+<object model="api.City">
+<field name="name">Guimarães</field>
+</object>
+<object model="api.City">
+<field name="name">Horta</field>
+</object>
+<object model="api.City">
+<field name="name">Ílhavo</field>
+</object>
+<object model="api.City">
+<field name="name">Lagoa</field>
+</object>
+<object model="api.City">
+<field name="name">Lagoa</field>
+</object>
+<object model="api.City">
+<field name="name">Lagos</field>
+</object>
+<object model="api.City">
+<field name="name">Lamego</field>
+</object>
+<object model="api.City">
+<field name="name">Leiria</field>
+</object>
+<object model="api.City">
+<field name="name">Lisboa</field>
+</object>
+<object model="api.City">
+<field name="name">Lixa</field>
+</object>
+<object model="api.City">
+<field name="name">Loulé</field>
+</object>
+<object model="api.City">
+<field name="name">Loures</field>
+</object>
+<object model="api.City">
+<field name="name">Lourosa</field>
+</object>
+<object model="api.City">
+<field name="name">Macedo de Cavaleiros</field>
+</object>
+<object model="api.City">
+<field name="name">Machico</field>
+</object>
+<object model="api.City">
+<field name="name">Maia</field>
+</object>
+<object model="api.City">
+<field name="name">Mangualde</field>
+</object>
+<object model="api.City">
+<field name="name">Marco de Canaveses</field>
+</object>
+<object model="api.City">
+<field name="name">Marinha Grande</field>
+</object>
+<object model="api.City">
+<field name="name">Matosinhos</field>
+</object>
+<object model="api.City">
+<field name="name">Mealhada</field>
+</object>
+<object model="api.City">
+<field name="name">Mêda</field>
+</object>
+<object model="api.City">
+<field name="name">Miranda do Douro / Miranda de l Douro</field>
+</object>
+<object model="api.City">
+<field name="name">Mirandela</field>
+</object>
+<object model="api.City">
+<field name="name">Montemor-o-Novo</field>
+</object>
+<object model="api.City">
+<field name="name">Montijo</field>
+</object>
+<object model="api.City">
+<field name="name">Moura</field>
+</object>
+<object model="api.City">
+<field name="name">Odivelas</field>
+</object>
+<object model="api.City">
+<field name="name">Olhão da Restauração</field>
+</object>
+<object model="api.City">
+<field name="name">Oliveira de Azeméis</field>
+</object>
+<object model="api.City">
+<field name="name">Oliveira do Bairro</field>
+</object>
+<object model="api.City">
+<field name="name">Oliveira do Hospital</field>
+</object>
+<object model="api.City">
+<field name="name">Ourém</field>
+</object>
+<object model="api.City">
+<field name="name">Ovar</field>
+</object>
+<object model="api.City">
+<field name="name">Paços de Ferreira</field>
+</object>
+<object model="api.City">
+<field name="name">Paredes</field>
+</object>
+<object model="api.City">
+<field name="name">Penafiel</field>
+</object>
+<object model="api.City">
+<field name="name">Peniche</field>
+</object>
+<object model="api.City">
+<field name="name">Peso da Régua</field>
+</object>
+<object model="api.City">
+<field name="name">Pinhel</field>
+</object>
+<object model="api.City">
+<field name="name">Pombal</field>
+</object>
+<object model="api.City">
+<field name="name">Ponta Delgada</field>
+</object>
+<object model="api.City">
+<field name="name">Ponte de Sor</field>
+</object>
+<object model="api.City">
+<field name="name">Portalegre</field>
+</object>
+<object model="api.City">
+<field name="name">Portimão</field>
+</object>
+<object model="api.City">
+<field name="name">Porto</field>
+</object>
+<object model="api.City">
+<field name="name">Póvoa de Santa Iria</field>
+</object>
+<object model="api.City">
+<field name="name">Póvoa de Varzim</field>
+</object>
+<object model="api.City">
+<field name="name">Praia da Vitória</field>
+</object>
+<object model="api.City">
+<field name="name">Quarteira</field>
+</object>
+<object model="api.City">
+<field name="name">Queluz</field>
+</object>
+<object model="api.City">
+<field name="name">Rebordosa</field>
+</object>
+<object model="api.City">
+<field name="name">Reguengos de Monsaraz</field>
+</object>
+<object model="api.City">
+<field name="name">Ribeira Grande</field>
+</object>
+<object model="api.City">
+<field name="name">Rio Maior</field>
+</object>
+<object model="api.City">
+<field name="name">Rio Tinto</field>
+</object>
+<object model="api.City">
+<field name="name">Sabugal</field>
+</object>
+<object model="api.City">
+<field name="name">Sacavém</field>
+</object>
+<object model="api.City">
+<field name="name">Samora Correia</field>
+</object>
+<object model="api.City">
+<field name="name">Santa Comba Dão</field>
+</object>
+<object model="api.City">
+<field name="name">Santa Cruz</field>
+</object>
+<object model="api.City">
+<field name="name">Santa Maria da Feira</field>
+</object>
+<object model="api.City">
+<field name="name">Santana</field>
+</object>
+<object model="api.City">
+<field name="name">Santarém</field>
+</object>
+<object model="api.City">
+<field name="name">Santiago do Cacém</field>
+</object>
+<object model="api.City">
+<field name="name">Santo Tirso</field>
+</object>
+<object model="api.City">
+<field name="name">São João da Madeira</field>
+</object>
+<object model="api.City">
+<field name="name">São Mamede de Infesta</field>
+</object>
+<object model="api.City">
+<field name="name">São Pedro do Sul</field>
+</object>
+<object model="api.City">
+<field name="name">São Salvador de Lordelo</field>
+</object>
+<object model="api.City">
+<field name="name">Seia</field>
+</object>
+<object model="api.City">
+<field name="name">Seixal</field>
+</object>
+<object model="api.City">
+<field name="name">Senhora da Hora</field>
+</object>
+<object model="api.City">
+<field name="name">Serpa</field>
+</object>
+<object model="api.City">
+<field name="name">Setúbal</field>
+</object>
+<object model="api.City">
+<field name="name">Silves</field>
+</object>
+<object model="api.City">
+<field name="name">Sines</field>
+</object>
+<object model="api.City">
+<field name="name">Tarouca</field>
+</object>
+<object model="api.City">
+<field name="name">Tavira</field>
+</object>
+<object model="api.City">
+<field name="name">Tomar</field>
+</object>
+<object model="api.City">
+<field name="name">Tondela</field>
+</object>
+<object model="api.City">
+<field name="name">Torres Novas</field>
+</object>
+<object model="api.City">
+<field name="name">Torres Vedras</field>
+</object>
+<object model="api.City">
+<field name="name">Trancoso</field>
+</object>
+<object model="api.City">
+<field name="name">Trofa</field>
+</object>
+<object model="api.City">
+<field name="name">Valbom</field>
+</object>
+<object model="api.City">
+<field name="name">Vale de Cambra</field>
+</object>
+<object model="api.City">
+<field name="name">Valença</field>
+</object>
+<object model="api.City">
+<field name="name">Valongo</field>
+</object>
+<object model="api.City">
+<field name="name">Valpaços</field>
+</object>
+<object model="api.City">
+<field name="name">Vendas Novas</field>
+</object>
+<object model="api.City">
+<field name="name">Viana do Castelo</field>
+</object>
+<object model="api.City">
+<field name="name">Vila Baleira</field>
+</object>
+<object model="api.City">
+<field name="name">Vila do Conde</field>
+</object>
+<object model="api.City">
+<field name="name">Vila Franca de Xira</field>
+</object>
+<object model="api.City">
+<field name="name">Vila Nova de Famalicão</field>
+</object>
+<object model="api.City">
+<field name="name">Vila Nova de Foz Côa</field>
+</object>
+<object model="api.City">
+<field name="name">Vila Nova de Gaia</field>
+</object>
+<object model="api.City">
+<field name="name">Vila Nova de Santo André</field>
+</object>
+<object model="api.City">
+<field name="name">Vila Real</field>
+</object>
+<object model="api.City">
+<field name="name">Vila Real de Santo António</field>
+</object>
+<object model="api.City">
+<field name="name">Viseu</field>
+</object>
+<object model="api.City">
+<field name="name">Vizela</field>
+</object>
+</django-objects>
