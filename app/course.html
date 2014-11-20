@@ -30,12 +30,12 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
     <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
 
 <!-- load up our app -->
 <script src="js/course/course.js"></script>
-
 </head>
 
 <body id="page-top" class="index" ng-controller="BgCtrl as bg">
@@ -97,9 +97,7 @@
 			<!--left-->
 			<div class="col-md-2" id="leftCol">
 				<ul class="nav nav-stacked" id="sidebar">
-				  <li><h5><a>«« voltar à UP</a></h5></li>
-				  <li><h5><a>« voltar à FEUP</a></h5></li>
-				  <li><h3>MIEIC</h3></li>
+				  <li><h3>{{bg.course.sidebarTitle}}</h3></li>
 				  <li><a href="#descricao"><h5>Descrição</h5></a></li>
 				  <li><a href="#saidas"><h5>Saídas Profissionais</h5></a></li>
 				  <li><a href="#vias"><h5>Vias de Acesso</h5></a></li>
@@ -118,28 +116,8 @@
             <div class="row">
                 <div class="col-lg-10 text-center">
                     <h2 class="section-heading"><br>Descrição</h2>
-<p align="left">
-O ensino da Engenharia Informática e Computação foi concebido na FEUP como requerendo um ciclo de formação e aprendizagem completo de cinco anos integrados, correspondendo aos 1º e 2º ciclos da implementação do Processo de Bolonha e conferindo de imediato o grau de Mestre.
-<br>
-O MIEIC pretende então alcançar, entre outros objetivos, as seguintes metas:
-<ul align="left">
-<li>proporcionar formação científica e de engenharia de base sólida, fundamental para a interação com outras especialidades da Engenharia e como suporte a uma prática profissional de excelência</li>
-<li>proporcionar formação profissional sólida e especializada que permita a conceção, especificação, projeto e realização de produtos, processos e serviços, tendo como base os Computadores, a Computação e as Tecnologias da Informação</li>
-<li>fomentar a aquisição de competências não-técnicas, como o desenvolvimento das capacidades e atitudes criativa, crítica, trabalho em equipa e liderança;</li>
-<li>fomentar a aquisição do espírito empreendedor e de iniciativa, avaliação de riscos e aproveitamento de oportunidades</li>
-<li>proporcionar formação que vise o desenvolvimento e prática de processos de gestão em engenharia com objetivos, entre outros, de incentivar um bom aproveitamento de meios e o aumento da qualidade e produtividade</li>
-<li>fornecer a formação necessária para a atribuição do título profissional de Engenheiro, a conferir pela Ordem dos Engenheiros</li>
-</ul>
-<p align="left">
-No final dos três primeiros anos (1º ciclo) do MIEIC os alunos estarão providos de uma sólida formação de base, abrangendo as competências científicas e de engenharia essenciais, mas também os conhecimentos fundamentais de banda larga nas diversas áreas da informática, embora sem qualquer especialização. Este primeiro degrau é visto sobretudo como possibilitador de mobilidade de e para outras escolas nacionais e europeias.
-<br>
-No final dos cinco anos do curso os diplomados terão uma formação avançada em Engenharia Informática e Computação, podendo ter escolhido uma área de especialização ou manter um leque mais alargado de interesses, mercê de uma ampla oferta de opções, configurável individualmente, contida no plano de estudos. As possíveis especializações incluem atualmente:
-<ul align="left">
-<li>Engenharia de Software e Sistemas de Informação (2 sub-áreas com estes nomes)</li>
-<li>Redes e Tecnologias de Informação (sub-áreas de Tecnologias da Internet e de Infra-estruturas Informáticas)</li>
-<li>Sistemas Inteligentes e Multimédia (2 sub-áreas com estes nomes)</li>
-</ul>
-
+                    <h3 class="section-subheading text-muted">{{bg.course.presSub}}</h3>
+                    <p align="left" ng-bind-html="bg.course.presText| unsafe"></p>
 				</div>
             </div>
 		</div>
