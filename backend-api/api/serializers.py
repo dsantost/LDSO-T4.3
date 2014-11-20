@@ -71,12 +71,18 @@ class InstitutionSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'abbr', 'email', 'phone', 'fax', 'address', 'postal_code', 'city', 'category', 'higher_up', 'students', 'degrees', 'comments')
 
 
-class InstitutionsSerializer(serializers.ModelSerializer):
+class InstitutionsGETSerializer(serializers.ModelSerializer):
     category = serializers.Field(source='category.name')
 
     class Meta:
         model = models.Institution
         fields = ('id', 'name', 'abbr', 'category')
+
+
+class InstitutionsPOSTSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Institution
+        fields = ('id', 'name', 'abbr', 'email', 'phone', 'fax', 'address', 'postal_code', 'city', 'category', 'higher_up')
 
 
 # User

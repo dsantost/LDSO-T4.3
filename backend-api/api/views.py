@@ -7,7 +7,13 @@ from rest_framework import generics
 # Institution
 class InstitutionList(generics.ListCreateAPIView):
     queryset = models.Institution.objects.all()
-    serializer_class = serializers.InstitutionsSerializer
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return serializers.InstitutionsGETSerializer
+
+        if self.request.method == 'POST':
+            return serializers.InstitutionsPOSTSerializer
 
 
 class InstitutionDetail(generics.RetrieveUpdateDestroyAPIView):
