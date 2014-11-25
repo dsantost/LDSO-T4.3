@@ -8,6 +8,7 @@ from rest_framework.test import APIRequestFactory
 # Institution View
 #########################################################################
 
+
 def create_city(name):
     return models.City.objects.create(name=name)
 
