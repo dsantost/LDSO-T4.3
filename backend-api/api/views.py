@@ -63,12 +63,18 @@ class CompanyDetail(generics.RetrieveUpdateDestroyAPIView):
 # Student
 class StudentList(generics.ListCreateAPIView):
     queryset = models.Student.objects.all()
-    serializer_class = serializers.StudentSerializer
+
+    def get_serializer_class(self):
+        if self.request.method == 'GET':
+            return serializers.StudentGETSerializer
+
+        if self.request.method == 'POST':
+            return serializers.StudentPOSTSerializer
 
 
 class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.Student.objects.all()
-    serializer_class = serializers.StudentSerializer
+    serializer_class = serializers.StudentGETSerializer
 
 
 # Category
