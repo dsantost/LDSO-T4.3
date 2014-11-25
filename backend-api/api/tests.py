@@ -223,7 +223,7 @@ class StudentViewTests(TestCase):
 
     def test_index_view_create(self):
         url = reverse('student-list')
-        data = create_student_json("Vascozzz)
+        data = create_student_json("Vasco")
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
