@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="inst">
+<html lang="en" ng-app="cour">
 
 <head>
 
@@ -128,26 +128,7 @@
             <div class="row">
                 <div class="col-lg-10 text-center">
                     <h2 class="section-heading">Saídas Profissionais</h2>
-                
-				<p align="left">
-				Entre as múltiplas possibilidades de funções profissionais dos diplomados pelo MIEIC destacam-se as seguintes:</p>
-				<ul align="left">
-				<li>Arquitetura e conceção de sistemas de informação</li>
-				<li>Gestão de sistemas informáticos ou de centros de informática</li>
-				<li>Conceção e desenvolvimento de sistemas e aplicações</li>
-				<li>Gestão de projectos informáticos</li>
-				<li>Consultadoria e auditoria</li>
-				<li>Investigação ou desenvolvimento tecnológico</li>
-				</ul>
-				<p align="left">Nos empregadores típicos para os Engenheiros Informáticos da FEUP incluem-se os seguintes:</p>
-				<ul align="left">
-				<li>Empresas de desenvolvimento de software</li>
-				<li>Empresas fornecedoras de serviços informáticos</li>
-				<li>Empresas de serviços como a banca e seguros</li>
-				<li>Empresas que integrem os seus próprios centros de serviços informáticos em áreas tais como os transportes, a distribuição, a<br>logística, etc.</li>
-				<li>Instituições de investigação e desenvolvimento</li>
-				</ul>
-				
+                    <p align="left" ng-bind-html="bg.course.saidasText| unsafe"></p>
             </div></div>
         </div>
     </section>
@@ -158,13 +139,8 @@
             <div class="row">
                 <div class="col-lg-10 text-center">
                     <h2 class="section-heading">Vias de Acesso</h2>
-					<ul align="left">
-					<li><h5>Alunos sem Licenciatura</h5><br>
-Ingressam no 1º ano. Após os três primeiros anos podem obter o grau de Licenciado em Ciências da Engenharia - orientação em Engenharia Informática e Computação. No final dos cinco anos do MIEIC será concedido o grau de Mestre</li>
-<br><br>
-<li><h5>Alunos Licenciados</h5><br>
-Ingressam no 4º ano com alguma possível variação dependendo do grau de afinidade e da profundidade dos estudos superiores já efetuados. A duração dos estudos no MIEIC poderá ir de 1 a 5 semestres, sendo normalmente de 4 semestres para Licenciados de três anos em Engenharia Informática. No final será concedido o grau de Mestre</li>
-</ul>
+					<p align="left" ng-bind-html="bg.course.viasText| unsafe"></p>
+					
                 </div>
             </div>
         </div>
@@ -177,13 +153,13 @@ Ingressam no 4º ano com alguma possível variação dependendo do grau de afini
                     <h2 class="section-heading">Provas de Ingresso</h2>
 					<p align="left">Um dos seguintes conjuntos:</p>
 					<ul align="left">
-						<li><h6>07 - Física e Química</h6></li>
-						<li><h6>19 - Matemática A</h6></li>
+						<li><h6>{{bg.provas.prova1}}</h6></li>
+						<li><h6>{{bg.provas.prova2}}</h6></li>
 					</ul>
 					<p align="left">ou:</p>
 					<ul align="left">
-						<li><h6>19 - Matemática A</h6></li>
-						<li><h6>18 - Português</h6></li>
+						<li><h6>{{bg.provas.prova3}}</h6></li>
+						<li><h6>{{bg.provas.prova4}}</h6></li>
 					</ul>
 					
 					<h4><br><br>Classificações Mínimas</h4>
@@ -723,50 +699,30 @@ Ingressam no 4º ano com alguma possível variação dependendo do grau de afini
 	</section>
 
 	-->
-    <section id="alunos">
+    <!-- Team Section -->
+    <section id="alunos" class="bg-light-gray" ng-controller="studentCtrl as st">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 text-center">
-                    <h2 class="section-heading">Os nossos alunos</h2>
-                    <h3 class="section-subheading text-muted">Nos quais depositamos o nosso futuro.</h3>
+                    <h2 class="section-heading">{{st.students.heading}}</h2>
+                    <h3 class="section-subheading text-muted">{{st.students.subheading}}</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Daniel Teixeira</h4>
-                        <p class="text-muted">ei10067@fe.up.pt</p>
+                <div ng-repeat="stu in st.students.content">
+                    <div class="col-sm-3" >
+                        <div class="team-member">
+                            <img src="{{stu.image}}" class="img-responsive img-circle" alt="">
+                            <h4>{{stu.name}}</h4>
+                            <p class="text-muted">{{stu.mail}}</p>
+                            
+
+                        </div>
+
                     </div>
+                    <br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0"><br ng-if="($index+1)%3 == 0">
                 </div>
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/2.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Diogo Ribeiro</h4>
-                        <p class="text-muted">ei11005@fe.up.pt</p>
-                    </div>
-                </div>
-                <div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/3.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Hugo Cardoso</h4>
-                        <p class="text-muted">ei11154@fe.up.pt</p>
-                    </div>
-                </div>
-				<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/4.jpg" class="img-responsive img-circle" alt="">
-                        <h4>João Monteiro</h4>
-                        <p class="text-muted">ei11055@fe.up.pt</p>
-                    </div>
-                </div>
-				<div class="col-sm-3">
-                    <div class="team-member">
-                        <img src="img/team/5.jpg" class="img-responsive img-circle" alt="">
-                        <h4>Vasco Gomes</h4>
-                        <p class="text-muted">ei11161@fe.up.pt</p>
-                    </div>
-                </div>
+                
             </div>
             <div class="row">
                 <div class="col-lg-10 text-center">
