@@ -18,12 +18,19 @@ class EnrollmentSerializer(serializers.ModelSerializer):
 
 
 # Student
-class StudentSerializer(serializers.ModelSerializer):
+class StudentGETSerializer(serializers.ModelSerializer):
     enrollments = EnrollmentSerializer(many=True)
 
     class Meta:
         model = models.Student
         fields = ('id', 'name', 'enrollments')
+
+
+class StudentPOSTSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.Student
+        fields = ('id', 'user', 'name', 'age', 'city', 'facebook_link', 'linkedin_link', 'twitter_link', 'github_link', 'profile_visibility')
 
 
 # EntryGrade
@@ -68,15 +75,21 @@ class InstitutionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = models.Institution
-        fields = ('id', 'name', 'abbr', 'email', 'phone', 'fax', 'address', 'postal_code', 'city', 'category', 'higher_up', 'students', 'degrees', 'comments')
+        fields = ('id', 'name', 'abbr', 'email', 'phone', 'fax', 'address', 'postal_code', 'page_color', 'city', 'category', 'higher_up', 'students', 'degrees', 'comments')
 
 
-class InstitutionsSerializer(serializers.ModelSerializer):
+class InstitutionsGETSerializer(serializers.ModelSerializer):
     category = serializers.Field(source='category.name')
 
     class Meta:
         model = models.Institution
         fields = ('id', 'name', 'abbr', 'category')
+
+
+class InstitutionsPOSTSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Institution
+        fields = ('id', 'name', 'abbr', 'email', 'phone', 'fax', 'address', 'postal_code', 'page_color', 'city', 'category', 'higher_up')
 
 
 # User
