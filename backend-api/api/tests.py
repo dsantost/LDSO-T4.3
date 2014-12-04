@@ -239,7 +239,18 @@ class StudentViewTests(TestCase):
         get_data = [{
             "id": 1,
             "name": "Hugo",
-            "enrollments": []
+            "city": None,
+            "birthdate": None,
+            "highschool_average": None,
+            "intro": "",
+            "profile_visibility": True,
+            "facebook_link": "",
+            "linkedin_link": "",
+            "twitter_link": "",
+            "github_link": "",
+            "enrollments": [],
+            "skills": [],
+            "languages": []
         }]
 
         self.assertEqual(response.status_code, status.HTTP_200_OK)

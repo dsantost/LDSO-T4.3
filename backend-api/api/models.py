@@ -1,11 +1,16 @@
+# coding=utf8
+# -*- coding: utf8 -*-
+# vim: set fileencoding=utf8 :
+
 from django.db import models
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
 
-
 #-----------------Institution Data-----------------#
 
+
 class Institution(models.Model):
+    # Data
     name = models.CharField(max_length=100, unique=True)
     abbr = models.CharField(max_length=50)
     email = models.EmailField()
@@ -15,9 +20,17 @@ class Institution(models.Model):
     postal_code = models.CharField(max_length=8, validators=[RegexValidator(regex='^\d{4}\-\d{3}$', message='Format: XXXX-XXX', code='Invalid Postal Code')])
     latitude = models.FloatField(blank=True, null=True)
     longitude = models.FloatField(blank=True, null=True)
-    page_color = models.CharField(max_length=6, default="ffffff")
 
-    #external relations
+    # View
+    page_color = models.CharField(max_length=6, blank=True, default="ffffff")
+    presentation_heading = models.CharField(blank=True, max_length=500, default="")
+    presentation = models.TextField(blank=True, default="")
+    history_heading = models.CharField(blank=True, max_length=500, default="")
+    students_heading = models.CharField(blank=True, max_length=500, default="")
+    wikipedia_link = models.URLField(max_length=150, blank=True, default="")
+    website_link = models.URLField(max_length=150, blank=True, default="")
+
+    # External relations
     city = models.ForeignKey('City')
     category = models.ForeignKey('Category')
     higher_up = models.ForeignKey('Institution', blank=True, null=True)
@@ -25,6 +38,19 @@ class Institution(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class InstitutionHistory(models.Model):
+    heading = models.CharField(max_length=500)
+    date = models.CharField(max_length=50)
+    content = models.TextField()
+    institution = models.ForeignKey('Institution', related_name="histories")
+
+    def __unicode__(self):
+        return self.heading
+
+    class Meta:
+        verbose_name_plural = "Institution Histories"
 
 
 class Category(models.Model):
@@ -37,10 +63,19 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
 
 
+class DegreeField(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
+
+
 class Degree(models.Model):
     name = models.CharField(max_length=100)
     abbr = models.CharField(max_length=50)
     code = models.IntegerField()
+    description = models.TextField(blank=True, default="")
+    field = models.ForeignKey('DegreeField')
     institution = models.ForeignKey('Institution', related_name="degrees")
 
     def __unicode__(self):
@@ -50,7 +85,9 @@ class Degree(models.Model):
 class Subject(models.Model):
     name = models.CharField(max_length=100)
     abbr = models.CharField(max_length=50)
-    description = models.TextField()
+    description = models.TextField(blank=True, default="")
+    year = models.IntegerField()
+    credits = models.IntegerField()
     degree = models.ForeignKey('Degree', related_name="subjects")
 
     def __unicode__(self):
@@ -64,6 +101,15 @@ class EntryGrade(models.Model):
 
     def __unicode__(self):
         return str(self.value)
+
+
+class EntryExam(models.Model):
+    name = models.CharField(max_length=100)
+    optional = models.BooleanField(default=False)
+    degree = models.ForeignKey('Degree', related_name="entry_exams")
+
+    def __unicode__(self):
+        return self.name
 
 
 #-----------------Misc Data-----------------#
@@ -83,15 +129,44 @@ class City(models.Model):
 class Student(models.Model):
     user = models.OneToOneField(User)
 
+    # Data
     name = models.CharField(max_length=100)
-    age = models.IntegerField(blank=True, null=True)
+    birthdate = models.DateField(blank=True, null=True)
     city = models.ForeignKey('City', blank=True, null=True)
+    highschool_average = models.FloatField(blank=True, null=True)
 
+    # View
+    intro = models.TextField(blank=True, default="")
     profile_visibility = models.BooleanField(default=True)
-    facebook_link = models.URLField(max_length=150, blank=True, null=True)
-    linkedin_link = models.URLField(max_length=150, blank=True, null=True)
-    twitter_link = models.URLField(max_length=150, blank=True, null=True)
-    github_link = models.URLField(max_length=150, blank=True, null=True)
+    facebook_link = models.URLField(max_length=150, blank=True, default="")
+    linkedin_link = models.URLField(max_length=150, blank=True, default="")
+    twitter_link = models.URLField(max_length=150, blank=True, default="")
+    github_link = models.URLField(max_length=150, blank=True, default="")
+
+    def __unicode__(self):
+        return self.name
+
+
+class SkillLevel(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
+
+
+class Skill(models.Model):
+    name = models.CharField(max_length=100)
+    level = models.ForeignKey('SkillLevel')
+    student = models.ForeignKey('Student', related_name="skills")
+
+    def __unicode__(self):
+        return self.name
+
+
+class Language(models.Model):
+    name = models.CharField(max_length=100)
+    level = models.ForeignKey('SkillLevel')
+    student = models.ForeignKey('Student', related_name="languages")
 
     def __unicode__(self):
         return self.name
