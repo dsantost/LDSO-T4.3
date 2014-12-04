@@ -19,11 +19,11 @@ var studentVar = {
         birthdate: '9 de Maio de 1993',
         civilstatus: 'Solteiro',
         institution:'Faculdade de Engenharia da Universidade do Porto',
-        institutionabb:'FEUP'
+        institutionabb:'FEUP',
         course:'Mestrado Integrado em Engenharia Informática e Computação',
         courseabb:'MIEIC'
 };
-
+/*
 var interestsVar = [
 	{
 		Bem-estar animal
@@ -44,3 +44,4 @@ var interestsVar = [
 		Direitos humanos
 	},
 ]
+	*/
