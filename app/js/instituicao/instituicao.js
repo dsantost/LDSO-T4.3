@@ -18,23 +18,31 @@ inst.controller('serviceController',['Institution',  function (Institution) {
     $http.get("http://www.w3schools.com/website/Customers_JSON.php")
     .success(function(response) {$scope.names = response;});
 }
-*/
-inst.controller('BgCtrl', function(/*$http*/) {
+*//*
+inst.controller('BgCtrl', function($http) {
   //this.institution = institutionVar;
-/*  $http.get("http://172.30.48.36:8000/api/institutions/1/?format=json").success(
-    function(response)
+ this.institution=function() {
+ $http.get("http://localhost:8001/api/institutions/1/").success(
+   function(response)
     {
-      this.institution=response;
+    //  console.log(response);
+      return response;
     });
-  $http({
-    url: 'http://172.30.48.36:8000/api/institutions/',
-    method: "GET"
-  }).then(function(response){
-   
-  });*/
-  this.institution=institutionVar;
-  this.faculties = facultiesVar;
+}
+this.faculties = facultiesVar;
 
+});*/
+
+inst.controller('BgCtrl', function($http,$scope) {
+  //this.institution = institutionVar;
+ $http.get("http://localhost:8001/api/institutions/1/").success(
+   function(response)
+    {
+    //  console.log(response);
+      $scope.institution=response;
+    });
+this.institution=institutionVar;
+this.faculties = facultiesVar;
 
 });
 

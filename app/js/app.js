@@ -1,47 +1,53 @@
 
-var portal= angular.module('portal', ['ngRoute']);
+var uniX= angular.module('uniX', ['ngRoute']);
 
 
-portal.config(function($routeProvider) {
+uniX.config(function($routeProvider) {
 
 $routeProvider
         // route for the home page
         .when('/', {
-                templateUrl : 'nav/home.html',
-                controller  : 'mainCtrl'
+            redirectTo : '../index.html'
+                //controller  : 'mainCtrl'
         })
 
         // route for the FAQ page
-        .when('/faq', {
-        templateUrl : 'nav/faq.html',
-        controller  : 'faqCtrl'
+        .when('/universidades', {
+            redirectTo : '../universidades.html'
+        //controller  : 'faqCtrl'
         })
 
         // route for the contact page
-        .when('/contact', {
-                templateUrl : 'nav/contact.html',
-                controller  : 'contactCtrl'
-        });
+        .when('/cursos', {
+            redirectTo : '../course.html'
+                //controller  : 'contactCtrl'
+        })
+
+        .when('/estudantes',{
+            redirectTo : '../estudantes.html'
+        })
+        ;
 });
 
 // create the controller and inject Angular's $scope
-portal.controller('mainCtrl', function($scope) {
+/*
+uniX.controller('mainCtrl', function($scope) {
         // create a message to display in our view
         $scope.heading = 'Welcome to Portal Académico';
         $scope.message = 'Here you will find the meaning of life.';
 });
 
-portal.controller('faqCtrl', function($scope) {
+uniX.controller('faqCtrl', function($scope) {
         $scope.heading = 'FAQ';
         $scope.message = 'This is where you will find the accumulated knowledge of the world.';
 });
 
-portal.controller('contactCtrl', function($scope) {
+uniX.controller('contactCtrl', function($scope) {
         $scope.heading = 'Contact us';
         $scope.message = 'Contact us';
 });
 
-portal.controller('TabController', function(){
+uniX.controller('TabController', function(){
     this.tab = 1;
 
     this.setTab = function(newValue){
@@ -51,4 +57,4 @@ portal.controller('TabController', function(){
     this.isSet = function(tabName){
       return this.tab === tabName;
     }
-});
+});*/
