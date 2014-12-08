@@ -4,10 +4,10 @@ from django.core.urlresolvers import reverse
 from rest_framework import status
 from rest_framework.test import APIRequestFactory
 
-#########################################################################
-# Institution View
-#########################################################################
 
+#########################################################################
+# Auxiliary
+#########################################################################
 
 def create_city(name):
     return models.City.objects.create(name=name)
@@ -35,6 +35,10 @@ def create_institution(name):
     return new_institution
 
 
+def create_user(name):
+    return models.User.objects.create(username=name, password="pass")
+
+
 def create_institution_json(name):
     new_city = create_city('Porto')
     new_category = create_category('Institution')
@@ -52,6 +56,10 @@ def create_institution_json(name):
     }
     return new_institution
 
+
+#########################################################################
+# Institution View
+#########################################################################
 
 class InstitutionViewTests(TestCase):
 
@@ -192,21 +200,22 @@ class InstitutionViewTests(TestCase):
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
+
 #########################################################################
 # Student View
 #########################################################################
 
-
-def create_user(name):
-    return models.User.objects.create(username=name, password="pass")
-
-
 def create_student_json(name):
-    new_user = create_user(name)
+    email = name + "@email.com"
+    password = name
 
     new_student = {
-        'user': new_user.id,
-        "name": name,
+        "user": {
+            "username": name,
+            "email": email,
+            "password": password
+        },
+        "name": name
     }
     return new_student
 
@@ -224,7 +233,10 @@ class StudentViewTests(TestCase):
     def test_index_view_create(self):
         url = reverse('student-list')
         data = create_student_json("Vascozzz")
-        response = self.client.post(url, data)
+        response = self.client.post(url, data, format='json')
+
+        print response.data
+
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
 
@@ -239,6 +251,8 @@ class StudentViewTests(TestCase):
         get_data = [{
             "id": 1,
             "name": "Hugo",
+            "username": "Hugo",
+            "email": "Hugo@email.com",
             "city": None,
             "birthdate": None,
             "highschool_average": None,

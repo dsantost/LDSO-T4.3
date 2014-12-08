@@ -6,8 +6,10 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
 
-#-----------------Institution Data-----------------#
 
+#########################################################################
+# Institution
+#########################################################################
 
 class Institution(models.Model):
     # Data
@@ -70,6 +72,10 @@ class DegreeField(models.Model):
         return self.name
 
 
+#########################################################################
+# Degree
+#########################################################################
+
 class Degree(models.Model):
     name = models.CharField(max_length=100)
     abbr = models.CharField(max_length=50)
@@ -112,19 +118,9 @@ class EntryExam(models.Model):
         return self.name
 
 
-#-----------------Misc Data-----------------#
-class City(models.Model):
-    name = models.CharField(max_length=100)
-
-    def __unicode__(self):
-        return self.name
-
-    class Meta:
-        ordering = ['name']
-        verbose_name_plural = "Cities"
-
-
-#-----------------User Data-----------------#
+#########################################################################
+# Student
+#########################################################################
 
 class Student(models.Model):
     user = models.OneToOneField(User)
@@ -172,6 +168,18 @@ class Language(models.Model):
         return self.name
 
 
+class Enrollment(models.Model):
+    institution = models.ForeignKey('Institution')
+    degree = models.ForeignKey('Degree')
+    student = models.ForeignKey('Student', related_name='enrollments')
+    year = models.IntegerField()
+    active = models.BooleanField(default=True)
+
+
+#########################################################################
+# Company
+#########################################################################
+
 class Company(models.Model):
     name = models.CharField(max_length=100)
     user = models.OneToOneField(User)
@@ -198,8 +206,17 @@ class Comment(models.Model):
         verbose_name_plural = "Comments"
 
 
-class Enrollment(models.Model):
-    institution = models.ForeignKey('Institution')
-    student = models.ForeignKey('Student', related_name='enrollments')
-    year = models.IntegerField()
-    active = models.BooleanField(default=True)
+#########################################################################
+# Auxiliary
+#########################################################################
+
+
+class City(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        ordering = ['name']
+        verbose_name_plural = "Cities"
