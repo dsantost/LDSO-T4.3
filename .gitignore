@@ -1,1 +1,8 @@
-README.md
+logs/*
+!.gitkeep
+app/bower_components/
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea

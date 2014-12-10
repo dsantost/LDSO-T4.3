@@ -1,15 +1,48 @@
 'use strict'
 var inst= angular.module('inst',[]);
 
+
 inst.filter('unsafe', function($sce) {
     return function(val) {
         return $sce.trustAsHtml(val);
     };
 });
+/*
+inst.controller('serviceController',['Institution',  function (Institution) {
+   // console.log("Institution.controller");
+    this.serviceVar = Institution.query();
+}]);*/
 
-inst.controller('BgCtrl', function() {
-  this.institution = institutionVar;
-  this.faculties = facultiesVar;
+
+/*function customersController($scope,$http) {
+    $http.get("http://www.w3schools.com/website/Customers_JSON.php")
+    .success(function(response) {$scope.names = response;});
+}
+*//*
+inst.controller('BgCtrl', function($http) {
+  //this.institution = institutionVar;
+ this.institution=function() {
+ $http.get("http://localhost:8001/api/institutions/1/").success(
+   function(response)
+    {
+    //  console.log(response);
+      return response;
+    });
+}
+this.faculties = facultiesVar;
+
+});*/
+
+inst.controller('BgCtrl', function($http,$scope) {
+  //this.institution = institutionVar;
+ $http.get("http://localhost:8001/api/institutions/1/").success(
+   function(response)
+    {
+    //  console.log(response);
+      $scope.institution=response;
+    });
+this.institution=institutionVar;
+this.faculties = facultiesVar;
 
 });
 

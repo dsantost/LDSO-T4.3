@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="profile">
 
 <head>
 
@@ -31,9 +31,11 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="js/perfil/perfil.js"></script>
+
 </head>
 
-<body id="page-top" class="index">
+<body id="page-top" class="index" ng-controller="BackgroundCtrl as bg">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -78,17 +80,17 @@
     </nav>
 
     <!-- Header -->
-    <header style="text-align: left; background-image: url(img/banner.jpg);">
+    <header ng-style="text-align: left; {'background-image' : '{{bg.institution.bgImg}}'}">
         <div class="container">
             <div class="intro-text">
 				<div class="col-sm-3">
 				<div class="team-member">
-					<img src="img/team/4.jpg" class="img-responsive img-circle" alt="">
+					<img src="{{bg.student.profilepic}}" class="img-responsive img-circle" alt="Profile Picture">
 				</div>
 			</div>
-				<div class="intro-heading">João Monteiro</div>
-				<div class="intro-lead-in"><a href="">MIEIC</a>, <a href="">FEUP</a></div>
-				<h3 class="section-subheading">Porto, Portugal</h3>
+				<div class="intro-heading">{{bg.student.name}}</div>
+				<div class="intro-lead-in"><a href="">{{bg.student.courseabb}}</a>, <a href="">{{bg.student.institutionabb}}</a></div>
+				<h3 class="section-subheading">{{bg.student.local}}</h3>
             </div>
         </div>
     </header>
@@ -110,7 +112,9 @@
 				  <li><a href="#projetos"><h5>Projetos Desenvolvidos</h5></a></li>
 				</ul>
 			</div><!--/left-->
-	
+	    </div>
+    </div>
+
 	<!-- Intro Section -->
 	<div class="col-md-10">
     <section id="dados">
@@ -121,15 +125,16 @@
 					<p align="left">
 					<ul align="left">
 					<li><h5>Nome</h5>
-					João Miguel Monteiro<br><br>
+					{{bg.student.name}}<br><br>
 					<li><h5>Curso</h5>
-					<a href="">Mestrado Integrado em Engenharia Informática e Computação</a><br><br>
+					<a href="">{{bg.student.course}}</a><br><br>
 					<li><h5>Instituição</h5>
-					<a href="">Faculdade de Engenharia da Universidade do Porto</a><br><br>
+					<a href="">{{bg.student.institution}}</a><br><br>
 					<li><h5>Data de nascimento</h5>
-					9 de Maio de 1993<br><br>
+					{{bg.student.birthdate}}<br><br>
 					<li><h5>Estado civil</h5>
-					Solteiro<br><br>
+					{{bg.student.civilstatus}}<br><br>
+                    </ul>
 				</div>
             </div>
 		</div>
@@ -144,12 +149,7 @@
 				<p align="left">
 				Áreas de interesse:</p>
 				<ul align="left">
-				<li>Bem-estar animal</li>
-				<li>Arte e Cultura</li>
-				<li>Ação social</li>
-				<li>Educação</li>
-				<li>Ambiente</li>
-				<li>Direitos humanos</li>
+				<li>Bem-estar animal</li> <!--TODO-->
 				</ul>
 				<p align="left">Voluntariado realizado:</p>
 				<ul align="left">
@@ -292,7 +292,7 @@
                         <p class="text-muted">Âmbito: MIEIC</p>
                     </div>
                 </div>
-        </div>
+        </div></div>
     </section>
 </div>
 
@@ -342,6 +342,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+
 
 </body>
 
