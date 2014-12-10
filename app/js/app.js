@@ -1,34 +1,32 @@
-
-var uniX= angular.module('uniX', ['ngRoute']);
+'use strict'
+var uniX= angular.module('uniX', ['ngRoute','inst']);
 
 
 uniX.config(function($routeProvider) {
 
 $routeProvider
-        // route for the home page
-        .when('/', {
-            redirectTo : '../index.html'
-                //controller  : 'mainCtrl'
+        .when('/home', {
+            templateUrl : 'home.html'
         })
 
-        // route for the FAQ page
         .when('/universidades', {
-            redirectTo : '../universidades.html'
-        //controller  : 'faqCtrl'
+            templateUrl : 'university.html',
         })
 
-        // route for the contact page
         .when('/cursos', {
-            redirectTo : '../course.html'
-                //controller  : 'contactCtrl'
+            templateUrl : 'course.html'
         })
 
         .when('/estudantes',{
-            redirectTo : '../estudantes.html'
+            templateUrl : 'profile.html'
         })
         ;
 });
 
+
+uniX.controller('UnivCtrl',function(){
+    //uniX=inst;
+});
 // create the controller and inject Angular's $scope
 /*
 uniX.controller('mainCtrl', function($scope) {
