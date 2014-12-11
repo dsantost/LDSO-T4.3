@@ -8,6 +8,12 @@ cour.filter('unsafe', function($sce) {
 });
 
 cour.controller('BgCtrl', function() {
+    $http.get("http://localhost:8001/api/courses/1/").success(
+   function(response)
+    {
+    //  console.log(response);
+      $scope.institution=response;
+    });
   this.course = courseVar;
   this.subjects = subjectsVar;
     this.provas = provasVar;
