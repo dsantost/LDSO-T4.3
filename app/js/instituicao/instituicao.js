@@ -35,7 +35,7 @@ this.faculties = facultiesVar;
 
 inst.controller('BgCtrl', function($http,$scope) {
   //this.institution = institutionVar;
- $http.get("http://localhost:8001/api/institutions/1/").success(
+ $http.get("http://localhost:8000/api/institutions/1/").success(
    function(response)
     {
     //  console.log(response);
