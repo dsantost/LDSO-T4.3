@@ -67,17 +67,9 @@ class StudentGETSerializer(serializers.ModelSerializer):
 
 
 class StudentPOSTSerializer(serializers.ModelSerializer):
-    user = UserSerializer()
-
     class Meta:
         model = models.Student
-        fields = ('user', 'name')
-
-    def create(self, data):
-        user_data = data.pop('user')
-        user = User.objects.create_user(**user_data)
-        models.Student.objects.create()
-
+        fields = ('id', 'user', 'name', 'birthdate', 'city', 'facebook_link', 'linkedin_link', 'twitter_link', 'github_link', 'profile_visibility')
 
 #########################################################################
 # Company

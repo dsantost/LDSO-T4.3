@@ -39,6 +39,15 @@ def create_user(name):
     return models.User.objects.create(username=name, password="pass")
 
 
+def create_student_json(name):
+    new_user = create_user(name)
+    new_student = {
+        'user': new_user.id,
+        "name": name,
+    }
+    return new_student
+
+
 def create_institution_json(name):
     new_city = create_city('Porto')
     new_category = create_category('Institution')
@@ -205,21 +214,6 @@ class InstitutionViewTests(TestCase):
 # Student View
 #########################################################################
 
-def create_student_json(name):
-    email = name + "@email.com"
-    password = name
-
-    new_student = {
-        "user": {
-            "username": name,
-            "email": email,
-            "password": password
-        },
-        "name": name
-    }
-    return new_student
-
-
 class StudentViewTests(TestCase):
 
     def test_index_view_empty(self):
@@ -233,10 +227,7 @@ class StudentViewTests(TestCase):
     def test_index_view_create(self):
         url = reverse('student-list')
         data = create_student_json("Vascozzz")
-        response = self.client.post(url, data, format='json')
-
-        print response.data
-
+        response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
 
@@ -252,7 +243,7 @@ class StudentViewTests(TestCase):
             "id": 1,
             "name": "Hugo",
             "username": "Hugo",
-            "email": "Hugo@email.com",
+            "email": "",
             "city": None,
             "birthdate": None,
             "highschool_average": None,
