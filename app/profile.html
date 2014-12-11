@@ -27,321 +27,294 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDY0kkJiTPVd2U7aTOAwhc9ySH6oHxOIYM&sensor=false"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-resource.js" type="text/javascript"></script>
+
+    <!-- load up our app -->
     <script src="js/perfil/perfil.js"></script>
-
 </head>
+<body id="page-top" class="index" ng-controller="bgCtrl as bg">
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">uni-X</a>
+        </div>
 
-<body id="page-top" class="index" ng-controller="BackgroundCtrl as bg">
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#estudantes">Estudantes</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#universidades">Universidades</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#perfil">Perfil</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">uni-X</a>
+<!-- Header -->
+<header ng-style="{'background-image' : '{{bg.student.bgImg}}'}">
+    <div class="container" style="text-align: left">
+        <div class="intro-text">
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img src="{{bg.student.profilepic}}" class="img-responsive img-circle" alt="Profile Picture">
+                </div>
             </div>
+            <div class="intro-heading">{{bg.student.name}}</div>
+            <div class="intro-lead-in"><a href="">{{bg.student.courseabb}}</a>, <a href="">{{bg.student.institutionabb}}</a></div>
+            <h3 class="section-subheading">{{bg.student.local}}</h3>
+        </div>
+    </div>
+</header>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a href="#page-top"></a>
+<!-- Sidebar -->
+<div class="container">
+    <div class="row">
+        <!--left-->
+        <div class="col-md-2" id="leftCol">
+            <ul class="nav nav-stacked" id="sidebar">
+                <li><h3>{{bg.student.name}}</h3></li>
+                <li><a href="#dados"><h5>Dados Pessoais</h5></a></li>
+                <li><a href="#voluntariado"><h5>Voluntariado</h5></a></li>
+                <li><a href="#skills"><h5>Capacidades</h5></a></li>
+                <li><a href="#certificados"><h5>Certificados</h5></a></li>
+                <li><a href="#idiomas"><h5>Idiomas</h5></a></li>
+                <li><a href="#educacao"><h5>Educação</h5></a></li>
+                <li><a href="#interesses"><h5>Interesses</h5></a></li>
+                <li><a href="#projetos"><h5>Projetos Desenvolvidos</h5></a></li>
+            </ul>
+        </div><!--/left-->
+
+        <!-- Intro Section -->
+        <div class="col-md-10">
+            <section id="dados">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="section-heading"><br>Dados Pessoais</h2>
+                            <p align="left">
+                            <ul align="left">
+                                <li><h5>Nome</h5>
+                                    {{bg.student.name}}<br><br>
+                                <li><h5>Curso</h5>
+                                    <a href="">{{bg.student.course}}</a><br><br>
+                                <li><h5>Instituição</h5>
+                                    <a href="">{{bg.student.institution}}</a><br><br>
+                                <li><h5>Data de nascimento</h5>
+                                    {{bg.student.birthdate}}<br><br>
+                                <li><h5>Estado civil</h5>
+                                    {{bg.student.civilstatus}}<br><br>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="voluntariado" class="bg-light-gray" ng-controller="volCtrl as vol">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="section-heading">Voluntariado</h2>
+
+                            <p align="left">
+                                Áreas de interesse:</p>
+                            <ul align="left">
+                                <li ng-repeat="int in vol.vol.interests">{{int.name}}</li> <!--TODO-->
+                            </ul>
+                            <p align="left">Voluntariado realizado:</p>
+                            <ul align="left">
+                                <li ng-repeat="d in vol.vol.done">{{d.name}}</li>
+                            </ul>
+
+                        </div></div>
+                </div>
+            </section>
+
+            <section id="skills" ng-controller="skillsCtrl as skills">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="section-heading">Capacidades</h2>
+                            <p align="left">Especialidades:</p>
+                            <ul align="left">
+                                <li ng-repeat="best in skills.skills.best"><h6>{{best.name}}</h6></li>
+                            </ul>
+                            <p align="left">Conhecimento moderado:</p>
+                            <ul align="left">
+                                <li ng-repeat="mod in skills.skills.moderate"><h6>{{mod.name}}</h6></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="certificados" ng-controller="certsCtrl as certs">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="section-heading">Certificados</h2>
+                            <ul align="left" ng-repeat="cert in certs.certificates.list">
+                                <li><h5>{{cert.name}}</h5></li>
+                                <p> Nota obtida: {{cert.grade}} <br>Entidade: {{cert.entity}}<br>Validade: {{cert.vality}}<br></p>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="idiomas" class="bg-light-gray" ng-controller="langsCtrl as idiomas">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="section-heading">Idiomas</h2>
+                            <p align="left">Fluente/nativo:</p>
+                            <ul align="left">
+                                <li ng-repeat="lang in idiomas.languages.fluent"><h6>{{lang.name}}</h6></li>
+                            </ul>
+                            <p align="left">Principiante/básico:</p>
+                            <ul align="left">
+                                <li ng-repeat="lang in idiomas.languages.basic"><h6>{{lang.name}}</h6></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="educacao" ng-controller="eduCtrl as edu">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="section-heading">Educação</h2>
+
+                            <p align="left">
+                                Ensino Secundário</p>
+                            <ul align="left">
+                                <li ng-repeat="school in edu.education.secondary">{{school.name}} ({{school.year}})</li>
+                            </ul>
+                            <p align="left">Ensino Superior</p>
+                            <ul align="left">
+                                <li ng-repeat="school in edu.education.superior"><a href="">{{school.name}}</a> (<a href="">{{school.degree}}</a>)</li>
+                            </ul>
+
+                        </div></div>
+                </div>
+            </section>
+
+            <section id="interesses" ng-controller="intsCtrl as interesses">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="section-heading">Interesses</h2>
+
+                            <ul align="left">
+                                <li ng-repeat="int in interesses.interests.list">{{int.name}}</li>
+                            </ul>
+
+                        </div></div>
+                </div>
+            </section>
+
+            <section id="projetos" class="bg-light-gray" ng-controller="portCtrl as portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 text-center">
+                            <h2 class="section-heading">Projetos Desenvolvidos</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-5 portfolio-item" ng-repeat="item in portfolio.portfolio.items">
+                            <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                                <div class="portfolio-hover">
+                                </div>
+                                <img src='{{item.img}}' class="img-responsive" alt="">
+                            </a>
+                            <div class="portfolio-caption">
+                                <h4>{{item.name}}</h4>
+                                <p class="text-muted">Âmbito: {{item.degree}}</p>
+                            </div>
+                        </div>
+                    </div></div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <p><p><p>
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; uni-X 2014</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li><a href="mailto:ei11161@fe.up.pt"><i class="fa fa-envelope"></i></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#sobre">Sobre</a>
+                    <li><a href="https://github.com/dsantost/LDSO-T4.3"><i class="fa fa-github"></i></a>
                     </li>
-                    <li>
-                        <a class="page-scroll" href="#estudantes">Estudantes</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#universidades">Universidades</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#cursos">Cursos</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#perfil">Perfil</a>
+                    <li><a href="https://www.pivotaltracker.com/n/projects/1172810"><i class="fa fa-tasks"></i></a>
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
-
-    <!-- Header -->
-    <header ng-style="text-align: left; {'background-image' : '{{bg.institution.bgImg}}'}">
-        <div class="container">
-            <div class="intro-text">
-				<div class="col-sm-3">
-				<div class="team-member">
-					<img src="{{bg.student.profilepic}}" class="img-responsive img-circle" alt="Profile Picture">
-				</div>
-			</div>
-				<div class="intro-heading">{{bg.student.name}}</div>
-				<div class="intro-lead-in"><a href="">{{bg.student.courseabb}}</a>, <a href="">{{bg.student.institutionabb}}</a></div>
-				<h3 class="section-subheading">{{bg.student.local}}</h3>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><a href="https://github.com/dsantost/LDSO-T4.3/wiki">Wiki</a>
+                    </li>
+                    <li><a href="https://moodle.up.pt/course/view.php?id=2580">Moodle</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
-	
-		<!-- Sidebar -->
-	<div class="container">
-		<div class="row">
-			<!--left-->
-			<div class="col-md-2" id="leftCol">
-				<ul class="nav nav-stacked" id="sidebar">
-				  <li><h3>João Monteiro</h3></li>
-				  <li><a href="#dados"><h5>Dados Pessoais</h5></a></li>
-				  <li><a href="#voluntariado"><h5>Voluntariado</h5></a></li>
-				  <li><a href="#skills"><h5>Capacidades</h5></a></li>
-				  <li><a href="#certificados"><h5>Certificados</h5></a></li>
-				  <li><a href="#idiomas"><h5>Idiomas</h5></a></li>
-				  <li><a href="#educacao"><h5>Educação</h5></a></li>
-				  <li><a href="#interesses"><h5>Interesses</h5></a></li>
-				  <li><a href="#projetos"><h5>Projetos Desenvolvidos</h5></a></li>
-				</ul>
-			</div><!--/left-->
-	    </div>
     </div>
+</footer>
 
-	<!-- Intro Section -->
-	<div class="col-md-10">
-    <section id="dados">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 text-center">
-                    <h2 class="section-heading"><br>Dados Pessoais</h2>
-					<p align="left">
-					<ul align="left">
-					<li><h5>Nome</h5>
-					{{bg.student.name}}<br><br>
-					<li><h5>Curso</h5>
-					<a href="">{{bg.student.course}}</a><br><br>
-					<li><h5>Instituição</h5>
-					<a href="">{{bg.student.institution}}</a><br><br>
-					<li><h5>Data de nascimento</h5>
-					{{bg.student.birthdate}}<br><br>
-					<li><h5>Estado civil</h5>
-					{{bg.student.civilstatus}}<br><br>
-                    </ul>
-				</div>
-            </div>
-		</div>
-	</section>
-	
-    <section id="voluntariado" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 text-center">
-                    <h2 class="section-heading">Voluntariado</h2>
-                
-				<p align="left">
-				Áreas de interesse:</p>
-				<ul align="left">
-				<li>Bem-estar animal</li> <!--TODO-->
-				</ul>
-				<p align="left">Voluntariado realizado:</p>
-				<ul align="left">
-				<li>Banco Alimentar</li>
-				</ul>
-				
-            </div></div>
-        </div>
-    </section>
+<!-- jQuery Version 1.11.0 -->
+<script src="js/jquery-1.11.0.js"></script>
 
-    <section id="skills">
-         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 text-center">
-                    <h2 class="section-heading">Capacidades</h2>
-					<p align="left">Especialidades:</p>
-					<ul align="left">
-						<li><h6>C++</h6></li>
-						<li><h6>Java</h6></li>
-						<li><h6>HTML</h6></li>
-					</ul>
-					<p align="left">Conhecimento moderado:</p>
-					<ul align="left">
-						<li><h6>Desenvolvimento ágil de software</h6></li>
-						<li><h6>AngularJS</h6></li>
-					</ul>
-                </div>
-            </div>
-        </div>
-    </section>
-	
-	<section id="certificados">
-         <div class="container">
-            <div class="row">
-                <div class="col-lg-10 text-center">
-                    <h2 class="section-heading">Certificados</h2>
-					<ul align="left">
-						<li><h5>Certificate of Proficiency in English</h5></li>
-						<p> Nota obtida: A <br>Entidade: Universidade de Cambridge<br>Validade: Ilimitada<br></p>
-					</ul>
-                </div>
-            </div>
-        </div>
-    </section>
-	
-	<section id="idiomas" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 text-center">
-                    <h2 class="section-heading">Idiomas</h2>
-					<p align="left">Fluente/nativo:</p>
-					<ul align="left">
-						<li><h6>Português</h6></li>
-						<li><h6>Inglês</h6></li>
-					</ul>
-					<p align="left">Principiante/básico:</p>
-					<ul align="left">
-						<li><h6>Francês</h6></li>
-						<li><h6>Espanhol</h6></li>
-					</ul>
-                </div>
-            </div>
-        </div>
-    </section>
-	
-	<section id="educacao">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 text-center">
-                    <h2 class="section-heading">Educação</h2>
-                
-				<p align="left">
-				Ensino Secundário</p>
-				<ul align="left">
-				<li>Escola Secundária Dr. Mário Sacramento (12º ano)</li>
-				</ul>
-				<p align="left">Ensino Superior</p>
-				<ul align="left">
-				<li><a href="">Faculdade de Engenharia da Universidade do Porto</a> (<a href="">Mestrado Integrado em Engenharia Informática e Computação</a>)</li>
-				</ul>
-				
-            </div></div>
-        </div>
-    </section>
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
 
-    <section id="interesses">
-		<div class="container">
-            <div class="row">
-                <div class="col-lg-10 text-center">
-                    <h2 class="section-heading">Interesses</h2>
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.js"></script>
 
-				<ul align="left">
-				<li>Fotografia</li>
-				<li>Literatura</li>
-				<li>Cinematografia</li>
-				</ul>
-			
-            </div></div>
-        </div>
-    </section>
-	
-	<section id="projetos" class="bg-light-gray">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-10 text-center">
-                    <h2 class="section-heading">Projetos Desenvolvidos</h2>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                        </div>
-                        <img src="img/UP/mieic_p1.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Jogo "Raiden"</h4>
-                        <p class="text-muted">Âmbito: MIEIC</p>
-                    </div>
-                </div>
-				<div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                        </div>
-                        <img src="img/UP/mieic_p2.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Site "uni-X"</h4>
-                        <p class="text-muted">Âmbito: MIEIC</p>
-                    </div>
-                </div>
-				<div class="col-md-3 col-sm-5 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="portfolio-hover">
-                        </div>
-                        <img src="img/UP/mieic_p3.jpg" class="img-responsive" alt="">
-                    </a>
-                    <div class="portfolio-caption">
-                        <h4>Apresentação "Rosewood Hotels"</h4>
-                        <p class="text-muted">Âmbito: MIEIC</p>
-                    </div>
-                </div>
-        </div></div>
-    </section>
-</div>
+<!-- perfil Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
 
-    <footer>
-        <div class="container">
-            <div class="row">
-			<p><p><p>
-                <div class="col-md-4">
-                    <span class="copyright">Copyright &copy; uni-X 2014</span>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="mailto:ei11161@fe.up.pt"><i class="fa fa-envelope"></i></a>
-                        </li>
-                        <li><a href="https://github.com/dsantost/LDSO-T4.3"><i class="fa fa-github"></i></a>
-                        </li>
-                        <li><a href="https://www.pivotaltracker.com/n/projects/1172810"><i class="fa fa-tasks"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="list-inline quicklinks">
-                        <li><a href="https://github.com/dsantost/LDSO-T4.3/wiki">Wiki</a>
-                        </li>
-                        <li><a href="https://moodle.up.pt/course/view.php?id=2580">Moodle</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Plugin JavaScript -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script src="js/cbpAnimatedHeader.js"></script>
-
-    <!-- perfil Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-
-    <!-- Custom Theme JavaScript -->
-    <script src="js/agency.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="js/agency.js"></script>
 
 
 </body>
