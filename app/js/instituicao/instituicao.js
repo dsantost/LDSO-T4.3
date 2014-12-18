@@ -7,42 +7,74 @@ inst.filter('unsafe', function($sce) {
         return $sce.trustAsHtml(val);
     };
 });
-/*
-inst.controller('serviceController',['Institution',  function (Institution) {
-   // console.log("Institution.controller");
-    this.serviceVar = Institution.query();
-}]);*/
+
+var type='';
 
 
-/*function customersController($scope,$http) {
-    $http.get("http://www.w3schools.com/website/Customers_JSON.php")
-    .success(function(response) {$scope.names = response;});
-}
-*//*
-inst.controller('BgCtrl', function($http) {
-  //this.institution = institutionVar;
- this.institution=function() {
- $http.get("http://localhost:8001/api/institutions/1/").success(
-   function(response)
-    {
-    //  console.log(response);
-      return response;
-    });
-}
-this.faculties = facultiesVar;
+/* VARIABLES
+var institutionVar = {
+        name: '',
+        local: '',
+        bgImg:'',
+        sidebarTitle:'',
+        presSub:'',
+        presText:''
+};
 
-});*/
+var historyVar = {
+  subTitle: '',
+  content:[],
+  last:''
+};
 
-inst.controller('BgCtrl', function($http,$scope) {
-  //this.institution = institutionVar;
+
+var studentsVar = {
+  heading:'',
+  subheading:'',
+  content:[]
+};
+
+var commentVar=[];
+
+
+var facultiesVar = [];
+  
+  
+*/
+
+/* CONTROLLERS
+
+
+inst.controller('MainCtrl', function($http) {
  $http.get("http://localhost:8000/api/institutions/1/").success(
    function(response)
     {
-    //  console.log(response);
+      institutionVar.name=response.name;
+      institutionVar.local=response.address;
+      institutionVar.bgImg='';//response.name;
+      institutionVar.sidebarTitle=response.name;
+      institutionVar.presSub=response.presentation_heading;
+      institutionVar.presText=response.presentation;
+      historyVar.subTitle=response.history_heading;
+      historyVar.content=response.histories;
+      studentsVar.heading=response.students_heading;
+      stundentsVar.content=response.students;
+      commentVar=response.comments;
+      type=response.category;
+    });
+
+});
+
+*/
+inst.controller('BgCtrl', function($http,$scope) {
+ $http.get("http://localhost:8000/api/institutions/1/").success(
+   function(response)
+    {
       $scope.institution=response;
     });
 this.institution=institutionVar;
 this.faculties = facultiesVar;
+//this.type=type;
 
 });
 
