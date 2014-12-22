@@ -7,6 +7,58 @@ cour.filter('unsafe', function($sce) {
     };
 });
 
+var type='';
+
+/* Variables
+var courseVar = {
+        name: '',
+        local: '',
+        bgImg:'',
+        sidebarTitle:'',
+        presSub:'',
+        presText:'',
+        saidasText:'',
+        viasText:''
+};
+
+var provasVar = {
+};
+
+
+var studentsVar = {
+  heading:'',
+  subheading:'',
+  content:[]
+};
+  
+var commentVar=[];
+  
+*/
+
+/* CONTROLLERS
+
+
+inst.controller('MainCtrl', function($http) {
+ $http.get("http://localhost:8000/api/institutions/1/").success(
+   function(response)
+    {
+      courseVar.name=response.name;
+      courseVar.local=response.address;
+      courseVar.bgImg='';//response.name;
+      courseVar.sidebarTitle=response.name;
+      courseVar.presSub=response.presentation_heading;
+      courseVar.presText=response.presentation;
+      courseVar.saidasText=response.saidas;
+      courseVar.viasText=response.vias;
+      studentsVar.heading=response.students_heading;
+      stundentsVar.content=response.students;
+      commentVar=response.comments;
+      type=response.category;
+    });
+
+});
+*/
+
 cour.controller('BgCtrl', function() {
     $http.get("http://localhost:8001/api/courses/1/").success(
    function(response)
@@ -19,6 +71,8 @@ cour.controller('BgCtrl', function() {
     this.provas = provasVar;
 
 });
+
+
 
 cour.controller('histCtrl',function(){
   this.hist=historyVar;
