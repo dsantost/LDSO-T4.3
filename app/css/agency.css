@@ -45,6 +45,19 @@ a.active {
     color: #6D9197;
 }
 
+.login {
+  position: relative;
+}
+.login .accordion-login {
+  position: absolute;
+  right: 1%;
+  margin-top: 16px;
+  z-index: 1;
+  width: 12px;
+  height: 12px;
+ /* background: url(link.png) center center no-repeat; /* approx 12x12 link icon */
+}
+
 h1,
 h2,
 h3,
