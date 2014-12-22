@@ -109,13 +109,13 @@
         <div id="start" class="container">
             <div class="intro-text">
                 <div class="intro-heading">Uni-X</div>
-                <div class="intro-lead-in">Universidades</div>
+                <div class="intro-lead-in">Instituições</div>
             </div>
         </div>
     </header>
 
     <!-- Universities Section -->
-    <section id="Universidades" class="bg-light-gray">
+    <!--<section id="Universidades" class="bg-light-gray">
         <div ng-repeat="uni in main.universities">
                   <div class="col-md-3 col-sm-5 portfolio-item" >
                     <a href="university.html" class="portfolio-link">
@@ -124,13 +124,36 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="{{}}" class="img-responsive" alt="">
+                        <img src="img/header-bg.jpg" class="img-responsive" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>{{uni.abbr}}</h4>
                         <p class="text-muted">{{uni.name}}</p>
                     </div>
                   </div>
+    </section>-->
+    <section id="pesquisaUni" class="bg-light-gray">
+        <div class="container" class="col-md-4">
+            <input ng-model="searchText" placeholder="Pesquise aqui as instituições pretendidas" class="search">
+        </div>
+        <div class="container" class="col-md-4">
+         <div ng-repeat="uni in main.universities | filter:searchText">
+                  <div class="col-md-3 col-sm-5 portfolio-item" >
+                    <a href="university.html" class="portfolio-link">
+                        <div class="portfolio-hover">
+                            <div class="portfolio-hover-content">
+                                <i class="fa fa-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/header-bg.jpg" class="img-responsive" alt="">
+                    </a>
+                    <div class="portfolio-caption">
+                        <h4>{{uni.abbr}}</h4>
+                        <p class="text-muted">{{uni.name}}</p>
+                    </div>
+                  </div>
+             </div>
+        </div>
     </section>
     <!-- footer -->
     <footer>

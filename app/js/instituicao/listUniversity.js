@@ -18,12 +18,12 @@ listUni.controller('MainCtrl', function($http) {
     {
         for(var i=0; i<response.length; i++)
         {
-            if (response[i].category=="Universidade")
+            universitiesVar.push(response[i]);
+            /*if (response[i].category=="Universidade")
             {
                 universitiesVar.push(response[i]);
-            }
+            }*/
         }
-        console.log(universitiesVar);
     });
     this.universities = universitiesVar;
 

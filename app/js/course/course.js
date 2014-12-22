@@ -39,7 +39,7 @@ var commentVar=[];
 
 
 inst.controller('MainCtrl', function($http) {
- $http.get("http://localhost:8000/api/institutions/1/").success(
+ $http.get("http://localhost:8000/api/degrees").success(
    function(response)
     {
       courseVar.name=response.name;
@@ -60,7 +60,7 @@ inst.controller('MainCtrl', function($http) {
 */
 
 cour.controller('BgCtrl', function() {
-    $http.get("http://localhost:8001/api/courses/1/").success(
+    $http.get("http://localhost:8001/api/degrees/1/").success(
    function(response)
     {
     //  console.log(response);

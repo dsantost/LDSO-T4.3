@@ -42,7 +42,7 @@ var facultiesVar = [];
   
 */
 
-/* CONTROLLERS
+/* CONTROLLERS*/
 
 
 inst.controller('MainCtrl', function($http) {
@@ -65,7 +65,7 @@ inst.controller('MainCtrl', function($http) {
 
 });
 
-*/
+
 inst.controller('BgCtrl', function($http,$scope) {
  $http.get("http://localhost:8000/api/institutions/1/").success(
    function(response)
