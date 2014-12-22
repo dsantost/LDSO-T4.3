@@ -1,11 +1,11 @@
 'use strict'
-var uniX= angular.module('uniX', ['ngRoute','inst']);
+var uniX= angular.module('uniX', ['ngRoute']);
 
 
 uniX.config(function($routeProvider) {
 
 $routeProvider
-        .when('/home', {
+        .when('/', {
             templateUrl : 'home.html'
         })
 
