@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="uniX">
+<html lang="en">
 
 <head>
 
@@ -23,12 +23,7 @@
     <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
 
-<!-- load up our app -->
-    <script src="js/app.js"></script>
-    <script src="js/instituicao/instituicao.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -61,7 +56,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">Início</a>
+                        <a class="page-scroll" href="#sobre">Sobre</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#estudantes">Estudantes</a>
@@ -107,7 +102,98 @@
     </nav>
 
     <!-- Header -->
-    <div ng-view></div>
+    <header style="background-image:url(img/header-bg.jpg)">
+        <div id="start" class="container">
+            <div class="intro-text">
+                <div class="intro-lead-in">Tudo sobre as universidades e os seus alunos</div>
+                <div class="intro-heading">Informe-se na uni-X</div>
+				<button class="btn btn-xl" onclick="press('logon','start')">Entrar</button>
+            </div>
+        </div>
+        <div class="container" id="logon">
+        <form class="form-signin" role="form" hidden>
+            <h2 class="form-signin-heading">Please sign in</h2>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        </form>
+            </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="sobre">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Sobre</h2>
+					<h3 class="section-subheading text-muted">O uni-X é um site para todos. As universidades podem publicitar os seus cursos, os alunos de secundário podem tomar decisões informadas sobre o seu futuro, os alumni podem publicar os seus portfólios e as empresas podem encontrar funcionários!</h3>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-book fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Estudantes</h4>
+                    <p class="text-muted">És um candidato ao ensino superior? Descobre tudo sobre as tuas preferências e entra em contacto com alunos da tua universidade de escolha!</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-building fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Empresas</h4>
+                    <p class="text-muted"> Com filtros robustos e simples de usar, encontre novos talentos, explore os seus portfólios e entre em contacto com eles!</p>
+                </div>
+                <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                        <i class="fa fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                    </span>
+                    <h4 class="service-heading">Alumni</h4>
+                    <p class="text-muted">Acabado de sair do ensino superior e à procura de emprego? Basta associar-se à universidade que frequentou, publicar alguns dos seus trabalhos, e as empresas entram em contacto consigo!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; uni-X 2014</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="mailto:ei11161@fe.up.pt"><i class="fa fa-envelope"></i></a>
+                        </li>
+                        <li><a href="https://github.com/dsantost/LDSO-T4.3"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li><a href="https://www.pivotaltracker.com/n/projects/1172810"><i class="fa fa-tasks"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="https://github.com/dsantost/LDSO-T4.3/wiki">Wiki</a>
+                        </li>
+                        <li><a href="https://moodle.up.pt/course/view.php?id=2580">Moodle</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery Version 1.11.0 -->
     <script src="js/jquery-1.11.0.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
@@ -124,6 +210,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/agency.js"></script>
+
 </body>
 
 </html>
