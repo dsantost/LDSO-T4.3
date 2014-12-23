@@ -38,7 +38,7 @@
 <!-- load up our app -->
 <script src="js/instituicao/instituicao.js"></script>
 </head>
-<body id="page-top" class="index" ng-controller="BgCtrl as bg">
+<body id="page-top" class="index" ng-controller="MainCtrl">
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
@@ -82,11 +82,11 @@
     </nav>
     
     <!-- Header -->
-    <header ng-style="{'background-image' : '{{bg.institution.bgImg}}'}" >
+    <header ng-style="{'background-image' : '{{institutionVar.bgImg}}'}" >
         <div class="container">
             <div class="intro-text">
-                <div class="intro-heading">{{bg.institution.name}}</div>
-                <div class="intro-lead-in">{{bg.institution.address}}</div>
+                <div class="intro-heading">{{institutionVar.name}}</div>
+                <div class="intro-lead-in">{{institutionVar.local}}</div>
             </div>
         </div>
     </header>
@@ -97,7 +97,7 @@
 			<!--left-->
 			<div class="col-md-2" id="leftCol">
 				<ul class="nav nav-stacked" id="sidebar">
-				  <li><h3>{{bg.institution.name}}</h3></li>
+				  <li><h3>{{institutionVar.name}}</h3></li>
 				  <li><a href="#apresentacao"><h5>Apresentação</h5></a></li>
 				  <li><a href="#faculdades"><h5>Faculdades</h5></a></li>
 				  <li><a href="#historia"><h5>História</h5></a></li>
@@ -116,7 +116,7 @@
                 <div class="col-lg-10 text-center">
 					<img src="img/UP/logo.jpg" width="500" align="center"></img>
                     <h2 class="section-heading"><br>Apresentação</h2>
-                    <h3 class="section-subheading text-muted">{{bg.institution.presSub}}</h3>
+                    <h3 class="section-subheading text-muted">{{institutionVar.presSub}}</h3>
 
         <p align="left" ng-bind-html="bg.institution.presText| unsafe"></p>
                 </div>
@@ -125,12 +125,11 @@
 	</section>
 	
 	<!-- Faculty Section -->
-    <section id="faculdades" class="bg-light-gray" ng-if="{{bg.type}}=='Universidade'">
+    <section id="faculdades" class="bg-light-gray" ng-controller="BgCtrl as bg" ng-if="{{type}}=='Universidade'">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 text-center">
                     <h2 class="section-heading">Faculdades</h2>
-                    <h3 class="section-subheading text-muted">14 faculdades, 2 pólos, 1 família.</h3>
                 </div>
             </div>
             <div class="row" >
@@ -156,18 +155,18 @@
     </section>
 	
 	<!-- History Section -->
-    <section id="historia" ng-controller="histCtrl as hc">
+    <section id="historia">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 text-center">
                     <h2 class="section-heading">História</h2>
-                    <h3 class="section-subheading text-muted">{{hc.hist.subTitle}}</h3>
+                    <h3 class="section-subheading text-muted">{{historyVar.subTitle}}</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-10">
                     <ul class="timeline">
-                        <li class="timeline-inverted" ng-repeat="cont in hc.hist.content">
+                        <li class="timeline-inverted" ng-repeat="cont in historyVar.content">
                             <div class="timeline-image">
                                 <img class="img-circle img-responsive" src="{{cont.image}}" alt="">
 
@@ -175,11 +174,10 @@
                             <div class="timeline-panel">
                                 <div class="timeline-heading">
                                     <h4>{{cont.heading}}</h4>
-                                    <h4 class="subheading">{{cont.subheading}}</h4>
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">
-                                        {{cont.contentText}}
+                                        {{cont.content}}
                                     </p>
                                 </div>
                             </div>

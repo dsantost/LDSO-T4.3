@@ -8,59 +8,53 @@ inst.filter('unsafe', function($sce) {
     };
 });
 
-var type='';
+
+/* VARIABLES*/
+
+var facultiesVar = [];
+  
+  
 
 
-/* VARIABLES
-var institutionVar = {
+/* CONTROLLERS*/
+
+
+inst.controller('MainCtrl', function($http,$scope) {
+ $http.get("http://localhost:8000/api/institutions/1/").success(
+   function(response)
+    {
+        $scope.institutionVar= {
         name: '',
         local: '',
         bgImg:'',
         sidebarTitle:'',
         presSub:'',
-        presText:''
-};
-
-var historyVar = {
-  subTitle: '',
-  content:[],
-  last:''
-};
-
-
-var studentsVar = {
-  heading:'',
-  subheading:'',
-  content:[]
-};
-
-var commentVar=[];
-
-
-var facultiesVar = [];
-  
-  
-*/
-
-/* CONTROLLERS*/
-
-
-inst.controller('MainCtrl', function($http) {
- $http.get("http://localhost:8000/api/institutions/1/").success(
-   function(response)
-    {
-      institutionVar.name=response.name;
-      institutionVar.local=response.address;
-      institutionVar.bgImg='';//response.name;
-      institutionVar.sidebarTitle=response.name;
-      institutionVar.presSub=response.presentation_heading;
-      institutionVar.presText=response.presentation;
-      historyVar.subTitle=response.history_heading;
-      historyVar.content=response.histories;
-      studentsVar.heading=response.students_heading;
-      stundentsVar.content=response.students;
-      commentVar=response.comments;
-      type=response.category;
+        presText:''};
+      $scope.institutionVar.name=response.name;
+      $scope.institutionVar.local=response.address;
+      $scope.institutionVar.bgImg='url(img/universities/up.jpg)';//response.name;
+      $scope.institutionVar.sidebarTitle=response.name;
+      $scope.institutionVar.presSub=response.presentation_heading;
+      $scope.institutionVar.presText=response.presentation;
+        $scope.historyVar = {
+          subTitle: '',
+          content:[],
+          last:''
+        };
+        
+      $scope.historyVar.subTitle=response.history_heading;
+      $scope.historyVar.content=response.histories;
+        $scope.studentsVar = {
+          heading:'',
+          subheading:'',
+          content:[]
+        };
+      $scope.studentsVar.heading=response.students_heading;
+      $scope.studentsVar.content=response.students;
+        $scope.commentVar=[];
+      $scope.commentVar=response.comments;
+        $scope.type='';
+      $scope.type=response.category;
     });
 
 });
