@@ -18,7 +18,7 @@ var facultiesVar = [];
 
 /* CONTROLLERS*/
 
-
+/*
 inst.controller('MainCtrl', function($http,$scope) {
  $http.get("http://localhost:8000/api/institutions/1/").success(
    function(response)
@@ -59,7 +59,7 @@ inst.controller('MainCtrl', function($http,$scope) {
 
 });
 
-
+*/
 inst.controller('BgCtrl', function($http,$scope) {
  $http.get("http://localhost:8000/api/institutions/1/").success(
    function(response)
