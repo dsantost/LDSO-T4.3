@@ -1,4 +1,3 @@
-'use strict'
 var inst= angular.module('inst',[]);
 
 
@@ -10,17 +9,16 @@ inst.filter('unsafe', function($sce) {
 
 
 /* VARIABLES*/
-
-var facultiesVar = [];
   
   
-
+var id=1;
 
 /* CONTROLLERS*/
 
-/*
+var abbr="";
+
 inst.controller('MainCtrl', function($http,$scope) {
- $http.get("http://localhost:8000/api/institutions/1/").success(
+ $http.get("http://localhost:8000/api/institutions/"+id.toString()+"/").success(
    function(response)
     {
         $scope.institutionVar= {
@@ -53,13 +51,35 @@ inst.controller('MainCtrl', function($http,$scope) {
       $scope.studentsVar.content=response.students;
         $scope.commentVar=[];
       $scope.commentVar=response.comments;
-        $scope.type='';
-      $scope.type=response.category;
+        $scope.type="";
+      $scope.type=response.category.toString();
+        abbr=response.abbr;
     });
-
 });
 
-*/
+
+
+inst.controller('facCtrl', function($http,$scope) {
+    $http.get("http://localhost:8000/api/institutions/").success(
+        function(response)
+        {
+            
+              $scope.faculties=[];
+          for(var i=0;i<response.length;i++){
+            $http.get("http://localhost:8000/api/institutions/"+response[i].id.toString()+"/").success(
+                function(response)
+                {
+                    if(response.higher_up==abbr)
+                        $scope.faculties.push(response);
+                    
+                });
+        }
+        });
+
+
+});
+ 
+/*
 inst.controller('BgCtrl', function($http,$scope) {
  $http.get("http://localhost:8000/api/institutions/1/").success(
    function(response)
@@ -268,3 +288,4 @@ var facultiesVar = [
     nome:'ICBAS',
     img:'Instituto de Ciências Biomédicas Abel Salazar'
   },]
+*/
