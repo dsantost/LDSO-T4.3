@@ -1,6 +1,10 @@
 'use strict'
 var profile= angular.module('profile',[]);
-
+var sd=
+	{
+		bgimage:'url(img/banner.jpg)',
+		profilepic:'img/team/1.jpg'
+	};
 
 profile.filter('unsafe', function($sce) {
 	return function(val) {
@@ -8,9 +12,78 @@ profile.filter('unsafe', function($sce) {
 	};
 });
 
-profile.controller('bgCtrl', function() {
-	this.student=studentVar;
+profile.controller('stCtrl', function($scope, $http) {
+	$http.get('http://uni-x.me/api/students/1/').
+		success(function(response) {
+			$scope.student=response;
+			$scope.staticdata=sd;
+
+			$http.get('http://uni-x.me/api/institutions/').success(function(resp) {
+				$scope.institutions=[];
+				for(var i=0;i<$scope.student.enrollments.length;i++) {
+					for(var j=0;j<resp.length;j++) {
+						if (resp[j].id == $scope.student.enrollments[i].institution) {
+							var inst = {
+								name: '',
+								abbr: '',
+								year:'',
+								active:''};
+							inst.name = resp[j].name;
+							inst.abbr = resp[j].abbr;
+							inst.year = $scope.student.enrollments[i].year;
+							inst.active = $scope.student.enrollments[i].active;
+							$scope.institutions.push(inst);
+
+						}
+					}
+				}
+			});
+
+			$http.get('http://uni-x.me/api/cities/').success(function(resp) {
+				$scope.city="";
+					for(var i=0;i<resp.length;i++) {
+						if (resp[i].id == $scope.student.city) {
+							$scope.city = resp[i].name;
+						}
+					}
+			});
+		});
 });
+
+profile.controller('skillsCtrl', function($http,$scope) {
+	$http.get("http://uni-x.me/api/students/1/").success(
+		function(response)
+		{
+			$scope.expert=[];
+			$scope.proficient=[];
+			$scope.intermediate=[];
+			for(var i=0;i<response.skills.length;i++){
+				if(response.skills[i].level == "Expert")
+					$scope.expert.push(response.skills[i]);
+				else if(response.skills[i].level == "Proficient")
+					$scope.proficient.push(response.skills[i]);
+				else if(response.skills[i].level == "Intermediate")
+					$scope.intermediate.push(response.skills[i]);
+			}
+		});
+});
+
+profile.controller('langsCtrl', function($http,$scope) {
+	$http.get("http://uni-x.me/api/students/1/").success(
+		function(response)
+		{
+			$scope.fluent=[];
+			$scope.basic=[];
+			for(var i=0;i<response.languages.length;i++){
+				if(response.languages[i].level == 1 || response.languages[i].level == 2)
+					$scope.fluent.push(response.languages[i]);
+				else if(response.languages[i].level == 3 || response.languages[i].level == 4)
+					$scope.basic.push(response.languages[i]);
+			}
+		});
+});
+
+/*
 
 profile.controller('volCtrl',function(){
 	this.vol=volunteeringVar;
@@ -182,3 +255,5 @@ var portVar = {
 		},
 	]
 }
+
+	*/
