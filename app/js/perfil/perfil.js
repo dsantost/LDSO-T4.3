@@ -83,6 +83,17 @@ profile.controller('langsCtrl', function($http,$scope) {
 		});
 });
 
+profile.controller('coursesCtrl', function($scope, $http) {
+	$http.get('http://uni-x.me/api/degrees/').
+		success(function(response) {
+			$scope.degrees=response;
+			$http.get('http://uni-x.me/api/institutions/').success(function(resp) {
+				$scope.institutions=resp;
+			});
+
+		});
+});
+
 /*
 
 profile.controller('volCtrl',function(){

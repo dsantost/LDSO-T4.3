@@ -60,19 +60,19 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#sobre">Sobre</a>
+                    <a class="page-scroll" href="index.html">Sobre</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#estudantes">Estudantes</a>
+                    <a class="page-scroll" href="listStudents.html">Estudantes</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#universidades">Universidades</a>
+                    <a class="page-scroll" href="listUniversity.html">Universidades</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#cursos">Cursos</a>
+                    <a class="page-scroll" href="listCourses.html">Cursos</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#perfil">Perfil</a>
+                    <a class="page-scroll" href="profile.html">Perfil</a>
                 </li>
             </ul>
         </div>
@@ -105,12 +105,12 @@
             <ul class="nav nav-stacked" id="sidebar">
                 <li><h3>{{student.name}}</h3></li>
                 <li><a href="#dados"><h5>Dados Pessoais</h5></a></li>
-                <li><a href="#voluntariado"><h5>Voluntariado</h5></a></li>
+                <!--<li><a href="#voluntariado"><h5>Voluntariado</h5></a></li>-->
                 <li><a href="#skills"><h5>Capacidades</h5></a></li>
-                <li><a href="#certificados"><h5>Certificados</h5></a></li>
+                <!--<li><a href="#certificados"><h5>Certificados</h5></a></li>-->
                 <li><a href="#idiomas"><h5>Idiomas</h5></a></li>
                 <li><a href="#educacao"><h5>Educação</h5></a></li>
-                <li><a href="#interesses"><h5>Interesses</h5></a></li>
+                <!--<li><a href="#interesses"><h5>Interesses</h5></a></li>-->
                 <li><a href="#projetos"><h5>Projetos Desenvolvidos</h5></a></li>
             </ul>
         </div><!--/left-->
@@ -121,24 +121,69 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 text-center">
-                            <h2 class="section-heading"><br>Dados Pessoais</h2>
+                            <h2 class="section-heading">Dados Pessoais</h2>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editInfo">
+                                <h6>Editar informações <i class="fa fa-pencil-square-o"></i></h6>
+                            </button>
                             <p align="left">
                             <ul align="left">
                                 <li><h5>Nome</h5>
                                     {{student.name}}<br><br>
+                                <li><h5>Sobre</h5>
+                                    {{student.intro}}<br><br>
                                 <li><h5>Curso</h5>
                                     <a href="">{{student.course}}</a><br><br>
                                 <li><h5>Instituição</h5>
                                     <a href="">{{institutions[0].name}}</a><br><br>
                                 <li><h5>Data de nascimento</h5>
                                     {{student.birthdate}}<br><br>
-                                <li><h5>Sobre</h5>
-                                    {{student.intro}}<br><br>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <div class="modal fade" id="editInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" ng-controller="coursesCtrl">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel">Editar dados pessoais</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p align="left">
+                            <ul align="left">
+                                <li><h5>Nome</h5>
+                                    <input type="text" name="name"  value={{student.name}}><br><br>
+                                <li><h5>Sobre</h5>
+                                    <textarea class="form-control" rows="3" placeholder={{student.intro}}></textarea>
+                                <li><h5>Curso</h5>
+                                    <select class="form-control">
+                                        <option ng-repeat="course in degrees">{{course.name}}</option>
+                                    </select><br>
+                                <li><h5>Instituição</h5>
+                                    <select class="form-control">
+                                        <option ng-repeat="uni in institutions">{{uni.name}}</option>
+                                    </select><br>
+                                <li><h5>Data de nascimento</h5>
+                                    <input type="date" name="bday"><br>
+                                <li><h5>Média de secundário <a href="" data-toggle="tooltip" title="Esta informação é apenas visível para si."><i class="fa fa-question-circle"></i></a></h5>
+                                    <input type="text" name="name"  value={{student.highschool_average}}><br><br>
+                                <li><h5>Visibilidade do perfil <a href="" data-toggle="tooltip" title="Esta informação é apenas visível para si. Pode abaixo controlar a visibilidade do seu perfil. O seu nome, curso, fotografia de perfil e links para redes sociais poderão ainda assim aparecer noutras páginas do site."><i class="fa fa-question-circle"></i></a></h5></li>
+                                <div class="btn-group" data-toggle="buttons" role="group" aria-label="Visibilidade">
+                                    <label class="btn btn-default active"><input type="radio" name="options" id="visivel" autocomplete="off" checked>Visível para todos <i class="fa fa-eye"></i></button></label>
+                                    <label class="btn btn-default"><input type="radio" name="options" id="nvisivel" autocomplete="off">Visível apenas para mim <i class="fa fa-eye-slash"></i></button></label>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary">Guardar alterações</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 <!--
             <section id="voluntariado" class="bg-light-gray">
                 <div class="container">
