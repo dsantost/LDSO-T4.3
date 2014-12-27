@@ -96,7 +96,7 @@ cour.controller('initMap',function(){
 var courseVar = {
         name: 'Universidade do Porto',
         local: 'Porto, Portugal',
-        bgImg:'url(img/universities/up.jpg)',
+        bgImg:'url(img/institutions/up.jpg)',
         sidebarTitle:'Universidade do Porto',
         presSub:'O ensino da Engenharia Informática e Computação foi concebido na FEUP como requerendo um ciclo de formação e aprendizagem completo de cinco anos integrados, correspondendo aos 1º e 2º ciclos da implementação do Processo de Bolonha e conferindo de imediato o grau de Mestre.',
         presText:'O MIEIC pretende então alcançar, entre outros objetivos, as seguintes metas:<li>Proporcionar formação científica e de engenharia de base sólida, fundamental para a interação com outras especialidades da Engenharia e como suporte a uma prática profissional de excelência;<li>Proporcionar formação profissional sólida e especializada que permita a conceção, especificação, projeto e realização de produtos, processos e serviços, tendo como base os Computadores, a Computação e as Tecnologias da Informação;<li>Fomentar a aquisição de competências não-técnicas, como o desenvolvimento das capacidades e atitudes criativa, crítica, trabalho em equipa e liderança; fomentar a aquisição do espírito empreendedor e de iniciativa, avaliação de riscos e aproveitamento de oportunidades;<li>Proporcionar formação que vise o desenvolvimento e prática de processos de gestão em engenharia com objetivos, entre outros, de incentivar um bom aproveitamento de meios e o aumento da qualidade e produtividade;<li>Fornecer a formação necessária para a atribuição do título profissional de Engenheiro, a conferir pela Ordem dos Engenheiros. <br> <br>No final dos três primeiros anos (1º ciclo) do MIEIC os alunos estarão providos de uma sólida formação de base, abrangendo as competências científicas e de engenharia essenciais, mas também os conhecimentos fundamentais de banda larga nas diversas áreas da informática, embora sem qualquer especialização. Este primeiro degrau é visto sobretudo como possibilitador de mobilidade de e para outras escolas nacionais e europeias. No final dos cinco anos do curso os diplomados terão uma formação avançada em Engenharia Informática e Computação, podendo ter escolhido uma área de especialização ou manter um leque mais alargado de interesses, mercê de uma ampla oferta de opções, configurável individualmente, contida no plano de estudos. As possíveis especializações incluem atualmente:Engenharia de Software e Sistemas de Informação (2 sub-áreas com estes nomes), Redes e Tecnologias de Informação (sub-áreas de Tecnologias da Internet e de Infra-estruturas Informáticas), Sistemas Inteligentes e Multimédia (2 sub-áreas com estes nomes)',
@@ -181,27 +181,27 @@ var students = {
   subheading:'Nos quais depositamos o nosso futuro.',
   content:[
     {
-      image:'img/team/1.jpg',
+      image:'img/students/3.jpg',
       name:'Daniel Teixeira',
       mail:'ei10067@fe.up.pt'
     },
     {
-      image:'img/team/2.jpg',
+      image:'img/students/2.jpg',
       name:'Diogo Ribeiro',
       mail:'ei11005@fe.up.pt'
     },
     {
-      image:'img/team/3.jpg',
+      image:'img/students/1.jpg',
       name:'Hugo Cardoso',
       mail:'ei11154@fe.up.pt'
     },
     {
-      image:'img/team/4.jpg',
+      image:'img/students/4.jpg',
       name:'João Monteiro',
       mail:'ei11055@fe.up.pt'
     },
     {
-      image:'img/team/5.jpg',
+      image:'img/students/5.jpg',
       name:'Vasco Gomes',
       mail:'ei11161@fe.up.pt'
     },

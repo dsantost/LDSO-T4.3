@@ -2,8 +2,8 @@
 var profile= angular.module('profile',[]);
 var sd=
 	{
-		bgimage:'url(img/banner.jpg)',
-		profilepic:'img/team/1.jpg'
+		bgimage:'url(img/banners/technology.jpg)',
+		profilepic:'img/students/1.jpg'
 	};
 
 profile.filter('unsafe', function($sce) {

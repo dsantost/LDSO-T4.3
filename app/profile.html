@@ -82,7 +82,7 @@
 </nav>
 
 <!-- Header -->
-<header ng-style="{'background-image' : 'url(img/banner.jpg)'}">
+<header ng-style="{'background-image' : 'url(img/banners/technology.jpg)'}">
     <div class="container" style="text-align: left">
         <div class="intro-text">
             <div class="col-sm-3">
@@ -123,7 +123,7 @@
                         <div class="col-lg-10 text-center">
                             <h2 class="section-heading">Dados Pessoais</h2>
                             <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#editInfo">
-                                <h6>Editar informações <i class="fa fa-pencil-square-o"></i></h6>
+                                <h6>Editar <i class="fa fa-pencil-square-o"></i></h6>
                             </button>
                             <p align="left">
                             <ul align="left">
@@ -169,7 +169,7 @@
                                     <input type="date" name="bday"><br>
                                 <li><h5>Média de secundário <a href="" data-toggle="tooltip" title="Esta informação é apenas visível para si."><i class="fa fa-question-circle"></i></a></h5>
                                     <input type="text" name="name"  value={{student.highschool_average}}><br><br>
-                                <li><h5>Visibilidade do perfil <a href="" data-toggle="tooltip" title="Esta informação é apenas visível para si. Pode abaixo controlar a visibilidade do seu perfil. O seu nome, curso, fotografia de perfil e links para redes sociais poderão ainda assim aparecer noutras páginas do site."><i class="fa fa-question-circle"></i></a></h5></li>
+                                <li><h5>Visibilidade do perfil <a href="" data-toggle="tooltip" title="Esta informação é apenas visível para si. O seu nome, curso, fotografia de perfil e links para redes sociais poderão ainda assim aparecer noutras páginas do site."><i class="fa fa-question-circle"></i></a></h5></li>
                                 <div class="btn-group" data-toggle="buttons" role="group" aria-label="Visibilidade">
                                     <label class="btn btn-default active"><input type="radio" name="options" id="visivel" autocomplete="off" checked>Visível para todos <i class="fa fa-eye"></i></button></label>
                                     <label class="btn btn-default"><input type="radio" name="options" id="nvisivel" autocomplete="off">Visível apenas para mim <i class="fa fa-eye-slash"></i></button></label>
@@ -204,7 +204,7 @@
                 </div>
             </section>
 -->
-            <section id="skills" ng-controller="skillsCtrl">
+            <section id="skills" ng-controller="skillsCtrl" class="bg-light-gray">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 text-center">
@@ -240,7 +240,7 @@
                 </div>
             </section>
 -->
-            <section id="idiomas" class="bg-light-gray" ng-controller="langsCtrl">
+            <section id="idiomas" ng-controller="langsCtrl">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 text-center">
@@ -258,7 +258,7 @@
                 </div>
             </section>
 
-            <section id="educacao">
+            <section id="educacao" class="bg-light-gray">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-10 text-center">

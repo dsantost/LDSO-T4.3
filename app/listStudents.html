@@ -80,7 +80,7 @@
     </nav>
 
     <!-- Header -->
-    <header style="background-image:url(img/student_search.jpg)">
+    <header style="background-image:url(img/banners/student.jpg)">
         <div id="start" class="container">
             <div class="intro-text">
                 <div class="intro-heading">Uni-X</div>
@@ -94,7 +94,7 @@
             <input ng-model="searchText" placeholder="Pesquise aqui" class="search">
         </div>
         <div class="container" class="col-md-4">
-         <div class="col-sm-3" ng-repeat="stud in students | filter:searchText">
+         <div class="col-sm-2" ng-repeat="stud in students | filter:searchText">
                   <div class="team-member" >
                     <a href="profile.html">
                         <div class="portfolio-hover">
@@ -102,7 +102,7 @@
                                 <i class="fa fa-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/student_search.jpg" class="img-responsive img-circle" alt="">
+                        <img src="img/other/student-icon.png" class="img-responsive img-circle" alt="">
                     </a>
                     <div class="portfolio-caption">
                         <h4>{{stud.name}}</h4>

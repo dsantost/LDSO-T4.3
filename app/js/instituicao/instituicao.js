@@ -30,7 +30,7 @@ inst.controller('MainCtrl', function($http,$scope) {
         presText:''};
       $scope.institutionVar.name=response.name;
       $scope.institutionVar.local=response.address;
-      $scope.institutionVar.bgImg='url(img/universities/up.jpg)';//response.name;
+      $scope.institutionVar.bgImg='url(img/institutions/up.jpg)';//response.name;
       $scope.institutionVar.sidebarTitle=response.name;
       $scope.institutionVar.presSub=response.presentation_heading;
       $scope.institutionVar.presText=response.presentation;
