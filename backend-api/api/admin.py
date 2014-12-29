@@ -28,6 +28,7 @@ class DegreeAdmin(admin.ModelAdmin):
 
 
 admin.site.register(models.Institution, InstitutionAdmin)
+admin.site.register(models.InstitutionAdmin)
 admin.site.register(models.City)
 admin.site.register(models.Category)
 admin.site.register(models.Student)
@@ -43,3 +44,4 @@ admin.site.register(models.InstitutionHistory)
 admin.site.register(models.SkillLevel)
 admin.site.register(models.Skill)
 admin.site.register(models.Language)
+admin.site.register(models.Project)

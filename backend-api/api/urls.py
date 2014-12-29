@@ -12,6 +12,14 @@ urlpatterns = format_suffix_patterns(patterns('api.views',
             views.InstitutionDetail.as_view(),
             name='institution-detail'),
 
+        url(r'^institution-admins/$',
+            views.InstitutionAdminList.as_view(),
+            name='institution-admin-list'),
+
+        url(r'^institution-admins/(?P<pk>[0-9]+)/$',
+            views.InstitutionAdminDetail.as_view(),
+            name='institution-admin-detail'),
+
         url(r'^categories/$',
             views.CategoryList.as_view(),
             name='category-list'),
@@ -59,4 +67,12 @@ urlpatterns = format_suffix_patterns(patterns('api.views',
         url(r'^cities/$',
             views.CityList.as_view(),
             name='city-list'),
+
+        url(r'^projects/$',
+            views.ProjectList.as_view(),
+            name='projects-list'),
+
+        url(r'^projects/(?P<pk>[0-9]+)/$',
+            views.ProjectDetail.as_view(),
+            name='project-detail'),
 ))

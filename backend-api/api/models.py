@@ -5,7 +5,28 @@
 from django.db import models
 from django.core.validators import RegexValidator
 from django.contrib.auth.models import User
+import uuid
+import os
+from django.utils.deconstruct import deconstructible
 
+
+def get_file_path(instance, filename):
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % (uuid.uuid4(), ext)
+    return os.path.join('avatars', filename)
+
+
+@deconstructible
+class PathAndRename(object):
+    def __init__(self, sub_path):
+        self.path = sub_path
+
+    def __call__(self, instance, filename):
+        ext = filename.split('.')[-1]
+        # set filename as random string
+        filename = '{}.{}'.format(uuid.uuid4().hex, ext)
+        # return the whole path to the file
+        return os.path.join(self.path, filename)
 
 #########################################################################
 # Institution
@@ -71,6 +92,16 @@ class DegreeField(models.Model):
     def __unicode__(self):
         return self.name
 
+
+class InstitutionAdmin(models.Model):
+    user = models.OneToOneField(User)
+    institution = models.ForeignKey('Institution', related_name='admins')
+
+    def __unicode__(self):
+        return self.user.username
+
+    class Meta:
+        verbose_name_plural = "Institution Admins"
 
 #########################################################################
 # Degree
@@ -138,6 +169,7 @@ class Student(models.Model):
     linkedin_link = models.URLField(max_length=150, blank=True, default="")
     twitter_link = models.URLField(max_length=150, blank=True, default="")
     github_link = models.URLField(max_length=150, blank=True, default="")
+    avatar = models.ImageField(upload_to=PathAndRename("profiles"))
 
     def __unicode__(self):
         return self.name
@@ -174,6 +206,18 @@ class Enrollment(models.Model):
     student = models.ForeignKey('Student', related_name='enrollments')
     year = models.IntegerField()
     active = models.BooleanField(default=True)
+
+
+class Project(models.Model):
+    name = models.CharField(max_length=150)
+    description = models.CharField(max_length=300, blank=True, default="")
+    degree = models.ForeignKey('Degree', related_name='degree_projects')
+    student = models.ForeignKey('Student', related_name='student_projects')
+    image = models.ImageField(upload_to=PathAndRename("projects"), blank=True, null=True)
+    link = models.URLField(max_length=150, blank=True, default="")
+
+    def __unicode__(self):
+        return self.name
 
 
 #########################################################################

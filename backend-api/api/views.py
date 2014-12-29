@@ -87,6 +87,19 @@ class UserDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = serializers.UserSerializer
 
 
+#########################################################################
+# Institution Admin
+#########################################################################
+
+class InstitutionAdminList(generics.ListCreateAPIView):
+    queryset = models.InstitutionAdmin.objects.all()
+    serializer_class = serializers.InstitutionAdminSerializer
+
+
+class InstitutionAdminDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.InstitutionAdmin.objects.all()
+    serializer_class = serializers.InstitutionAdminSerializer
+
 
 #########################################################################
 # Company
@@ -129,3 +142,17 @@ class StudentDetail(generics.RetrieveUpdateDestroyAPIView):
 class SkillLevelList(generics.ListCreateAPIView):
     queryset = models.SkillLevel.objects.all()
     serializer_class = serializers.SkillLevelSerializer
+
+
+#########################################################################
+# Project
+#########################################################################
+
+class ProjectList(generics.ListCreateAPIView):
+    queryset = models.Project.objects.all()
+    serializer_class = serializers.ProjectSerializer
+
+
+class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Project.objects.all()
+    serializer_class = serializers.ProjectSerializer

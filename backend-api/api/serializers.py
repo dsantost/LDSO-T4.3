@@ -54,22 +54,29 @@ class LanguageSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'level')
 
 
+class ProjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = models.Project
+        fields = ('id', 'name', 'description', 'degree', 'student', 'image', 'link')
+
+
 class StudentGETSerializer(serializers.ModelSerializer):
     username = serializers.Field(source="user.username")
     email = serializers.Field(source="user.email")
     enrollments = EnrollmentSerializer(many=True)
     skills = SkillSerializer(many=True)
     languages = LanguageSerializer(many=True)
+    student_projects = ProjectSerializer(many=True)
 
     class Meta:
         model = models.Student
-        fields = ('id', 'username', 'email', 'name', 'birthdate', 'city', 'highschool_average', 'intro', 'profile_visibility', 'facebook_link', 'linkedin_link', 'twitter_link', 'github_link', 'enrollments', 'skills', 'languages')
+        fields = ('id', 'username', 'email', 'name', 'birthdate', 'city', 'highschool_average', 'intro', 'profile_visibility', 'facebook_link', 'linkedin_link', 'twitter_link', 'github_link', 'enrollments', 'skills', 'languages', 'student_projects', 'avatar')
 
 
 class StudentPOSTSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Student
-        fields = ('id', 'user', 'name', 'birthdate', 'city', 'facebook_link', 'linkedin_link', 'twitter_link', 'github_link', 'profile_visibility')
+        fields = ('id', 'user', 'name', 'birthdate', 'city', 'facebook_link', 'linkedin_link', 'twitter_link', 'github_link', 'profile_visibility', 'avatar')
 
 #########################################################################
 # Company
@@ -79,6 +86,19 @@ class CompanySerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Company
         fields = ('id', 'name')
+
+
+#########################################################################
+# Instituion Admins
+#########################################################################
+
+class InstitutionAdminSerializer(serializers.ModelSerializer):
+    username = serializers.Field(source="user.username")
+    email = serializers.Field(source="user.email")
+
+    class Meta:
+        model = models.InstitutionAdmin
+        fields = ('id', 'username', 'email', 'institution')
 
 
 #########################################################################
@@ -114,10 +134,11 @@ class DegreeGETSerializer(serializers.ModelSerializer):
     entry_grades = EntryGradeSerializer(many=True)
     subjects = SubjectSerializer(many=True)
     entry_exams = EntryExamsSerializer(many=True)
+    degree_projects = ProjectSerializer(many=True)
 
     class Meta:
         model = models.Degree
-        fields = ('id', 'name', 'abbr', 'code', 'description', 'field', 'institution', 'entry_grades', 'entry_exams', 'subjects')
+        fields = ('id', 'name', 'abbr', 'code', 'description', 'field', 'institution', 'entry_grades', 'entry_exams', 'subjects', 'degree_projects')
 
 
 class DegreePOSTSerializer(serializers.ModelSerializer):
