@@ -59,7 +59,7 @@ inst.controller('MainCtrl', function($http) {
 });
 */
 
-cour.controller('BgCtrl', function() {
+cour.controller('BgCtrl', function($http) {
     $http.get("http://localhost:8001/api/degrees/1/").success(
    function(response)
     {
